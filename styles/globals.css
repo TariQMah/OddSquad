@@ -3,7 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root {
+  --bg1: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FBCB50 0%, #FB6F50 7.81%, #FB50A2 17.19%, #CF50FB 28.13%, #7C50FB 38.54%, #5061FB 50.52%, #509FFB 59.37%, #50D2FB 67.19%, #50FBF1 75%, #50FBA9 85.42%, #7CFB50 93.75%, #CAFB50 100%);
+  --bg2: linear-gradient(180deg, #CA5E41 0%, #CA4B66 100%);
+  --bg3: linear-gradient(180deg, #CA4C62 0%, #C84184 100%);
+  --bg4: linear-gradient(180deg, #C84184 0%, #AC41BC 100%);
+  --bg4: linear-gradient(180deg, #AD41BC 0%, #9441C4 100%);
+}
 
 @font-face {
   font-family: 'newakedemo';
@@ -12,15 +18,15 @@
   font-weight: normal;
   font-style: normal;
 
+
 }
+
 
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -33,25 +39,23 @@ a {
 }
 
 .mainScrollScreen{
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  background: linear-gradient(180deg, #CAA141 0%, #CA5843 100%);
+  /* scroll-snap-type: y proximity;
+  overflow-y: scroll; */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FBCB50 0%, #FB6F50 7.81%, #FB50A2 17.19%, #CF50FB 28.13%, #7C50FB 38.54%, #5061FB 50.52%, #509FFB 59.37%, #50D2FB 67.19%, #50FBF1 75%, #50FBA9 85.42%, #7CFB50 93.75%, #CAFB50 100%);
 }
 .overlayPattern{
   background: url('../public/images/rectangle_pattern.png');
+  position: relative;
 
 }
+.chat{
+  background: url("../public/images/chatBubble.png") no-repeat;
+  background-size: 100% 100%;
+}
+
 /* 
-.panel {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  scroll-snap-align: start;
+.bgShape1{
+  background: url("../public/images/bgShape1.png") no-repeat;
+  background-attachment: fixed;
+  background-position-x: 200px;
 } */
-
-.box-2{
-  background-color: aquamarine;
-}

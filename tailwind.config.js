@@ -12,10 +12,20 @@ module.exports = {
         Newake: ["newakedemo", "sans-serif"],
         JosefinSans: ["Josefin Sans", "sans-serif"],
       },
+      colors: {
+        yellowColor: "#FFE39D",
+        yellowColor1: "#FBB551",
+      },
+
+      opacity: {
+        0.3: "0.3",
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["even"],
+    },
   },
   plugins: [],
 };
