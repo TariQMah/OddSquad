@@ -41,7 +41,7 @@ a {
 .mainScrollScreen{
   /* scroll-snap-type: y proximity;
   overflow-y: scroll; */
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FBCB50 0%, #FB6F50 7.81%, #FB50A2 17.19%, #CF50FB 28.13%, #7C50FB 38.54%, #5061FB 50.52%, #509FFB 59.37%, #50D2FB 67.19%, #50FBF1 75%, #50FBA9 85.42%, #7CFB50 93.75%, #CAFB50 100%);
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FBCB50 0%, #FB6F50 7.81%, #FB50A2 17.19%, #CF50FB 28.13%, #7C50FB 38.54%, #5061FB 50.52%, #509FFB 59.37%, #50D2FB 67.19%, #50FBF1 75%, #50FBA9 85.42%, #7CFB50 93.75%, #CAFB50 100%); */
 }
 .overlayPattern{
   background: url('../public/images/rectangle_pattern.png');
@@ -59,3 +59,7 @@ a {
   background-attachment: fixed;
   background-position-x: 200px;
 } */
+
+.screen5{
+  /* background: url("../public/images/bgGraphic2.svg") no-repeat; */
+}

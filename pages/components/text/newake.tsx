@@ -17,13 +17,13 @@ const Newake = ({
   tag: Wrapper = "div",
   children,
   color,
-  size,
+  size = "xl",
   margin,
   align,
   weight,
   padding,
   textTransform = "uppercase",
-  width,
+  width = "full",
 }: IProps) => {
   return (
     <Wrapper

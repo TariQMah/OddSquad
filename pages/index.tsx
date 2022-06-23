@@ -15,28 +15,33 @@ import gsapActions from "./hooks/gsapActions";
 import { useInView } from "react-intersection-observer";
 import Newake from "./components/text/newake";
 import JosefinSans from "./components/text/josefinSans";
-
+import ProductCard from "./components/productCart";
+import Benefits from "./components/benefits";
+import Twitter from "./components/socialButtons/twitter";
 const Home: NextPage = () => {
   const boxRef = useRef<any>();
-  const child = gsap.utils.selector(boxRef.current);
+  const marqueeText = useRef<any>();
 
-  const { timeLine1, graphicScroll } = gsapActions(boxRef);
+  const { bgTimeLine, graphicScroll, shape2, marquee } = gsapActions(boxRef);
   gsap.registerPlugin(ScrollTrigger);
   const [showMore, setShowMore] = useState(false);
-  const tl = gsap.timeline();
   const { ref, inView, entry } = useInView({
-    /* Optional options */
     threshold: 0,
   });
 
   useEffect(() => {
-    timeLine1();
+    bgTimeLine();
     graphicScroll();
+    shape2();
+    marquee(marqueeText);
     return () => {
-      timeLine1();
+      bgTimeLine();
       graphicScroll();
+      shape2();
     };
   }, []);
+
+  useEffect(() => {}, []);
   return (
     <div>
       <Head>
@@ -186,7 +191,7 @@ const Home: NextPage = () => {
                     </Newake>
 
                     <div className="mt-5">
-                      <p
+                      <div
                         className="cursor-pointer p-0 m-0 ml-2  flex items-center  text-white"
                         onClick={() => setShowMore(true)}
                       >
@@ -202,17 +207,127 @@ const Home: NextPage = () => {
                         >
                           READ MORE
                         </JosefinSans>
-                      </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="screen5 z-10 relative section">
-              <Newake margin="mt-0 ml-2" align="text-left" size="sm" tag="h4">
-                PLAY OUR FILM
-              </Newake>
+          <div className="screen5 z-10 relative section">
+            <img
+              src="images/bgGraphic2.svg"
+              id="shape2"
+              className="absolute z-0 -ml-40 "
+            />
+            <Newake tag="h4" size="lg" color="yellowColor">
+              OUR STORY
+            </Newake>
+            <div
+              className="marquee w-full -z-10 overflow-hidden whitespace-nowrap "
+              id="no01"
+              ref={marqueeText}
+            >
+              <JosefinSans
+                tag="h4"
+                color="white"
+                size="5xl"
+                width="w-auto"
+                className={"marqueeText"}
+                weight="font-extrabold	"
+                textTransform="uppercase"
+                margin="mt-0"
+              >
+                JOIN THE SQUAD
+              </JosefinSans>
+              <JosefinSans
+                tag="h4"
+                color="white"
+                width="w-auto"
+                size="5xl"
+                className={"marqueeText"}
+                weight="font-extrabold	"
+                textTransform="uppercase"
+                margin="mt-0"
+              >
+                JOIN THE SQUAD
+              </JosefinSans>
+            </div>
+
+            <ProductCard />
+            <div className="text-center  flex justify-center relative">
+              <img
+                src="images/logoText.png"
+                className="absolute -z-10 -top-2"
+              />
+              <div className="text-center">
+                <h3 className="text-white w-auto text-4xl font-Newake font-extrabold uppercase mt-28 z-10">
+                  Member&apos;s Pass
+                </h3>
+
+                <h2 className="text-white w-auto text-8xl	 font-Newake font-semibold mt-2 uppercase  z-10">
+                  3,333
+                </h2>
+                <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                  We’re opening the books to our coveted member’s club. Join the
+                  ODDSquad as an OG member to ensure you always get the best
+                  perks on offer.
+                </p>
+
+                <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                  Journey with us into our Odd World for In-Real-Life
+                  experiences, limited editions, exclusive parties and tones of
+                  Web3 goodies. The OddSquad Member’s Pass will be your ticket
+                  to ride.
+                </p>
+              </div>
+              <div className="clear-both"></div>
+            </div>
+          </div>
+          <div className="screen6 z-10 h-screen relative section">
+            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
+              OG MEMBER BENEFITS
+            </Newake>
+            <div className="">
+              <Benefits>
+                Free OddSquad <br /> profile pictures
+              </Benefits>
+              <Benefits>
+                Exclusive invites to IRL events
+                <br /> and VIP access
+              </Benefits>
+              <Benefits>
+                Collaborations with top Mexican <br /> Artists, airdropped to
+                holders
+              </Benefits>
+              <Benefits>
+                Free bottles of mezcal* <br /> and merch drops
+                <h4 className="opacity-60 font-Newake font-light text-xs">
+                  *legal stipulations apply
+                </h4>
+              </Benefits>
+              <Benefits>
+                Access to one off Limited Edition
+                <br /> bottles of Ojo de Dios Mezcal
+              </Benefits>
+              <Benefits>
+                Be part of the first Metaverse
+                <br /> community for mezcal lovers
+              </Benefits>
+            </div>
+          </div>
+
+          <div className="screen6 z-10 h-screen relative section">
+            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
+              JOIN THE QUEST
+            </Newake>
+
+            <div className="flex justify-between flex-col h-3/5">
+              <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                Follow us for a whitelist spot and join the whitelist spot
+              </p>
+              <Twitter />
             </div>
           </div>
           {inView && <Footer />}

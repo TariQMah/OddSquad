@@ -43,72 +43,29 @@ const colorsEachScreen = [
 const gsapActions = ({ current }: any) => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const timeLine1 = () => {
-    let newArr = <any>[colors2[0]];
+  const bgTimeLine = () => {
     gsap.utils.toArray(".section").forEach(function (elem: any, i: number) {
-      newArr.push(colors2[i]);
-
-      // gsap.to(".mainScrollScreen", {
-      //   scrollTrigger: {
-      //     trigger: elem,
-      //     scrub: true,
-
-      //     start: "top bottom",
-      //     end: "+=100%",
-      //     onEnter: () => {
-      //       gsap.to(".mainScrollScreen", {
-      //         duration: 1,
-      //         background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, ${newArr.toString()})`,
-      //       });
-      //     },
-      //   },
-      // });
-
       const bg = gsap.timeline({
         scrollTrigger: {
           trigger: elem,
-          start: "top top", // when the top of the trigger hits the top of the viewport
+          start: "bottom", // when the top of the trigger hits the top of the viewport
           end: "+=500", // end after scrolling 500px beyond the start
           scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         },
       });
 
-      bg.to(".mainScrollScreen", {
-        background: `${colorsEachScreen[i]}`,
-      });
+      bg.fromTo(
+        ".mainScrollScreen",
+        {
+          background: `${colorsEachScreen[0]}`,
+          duration: 1,
+        },
+        {
+          background: `${colorsEachScreen[i + 1]}`,
+          duration: 1,
+        }
+      );
     });
-
-    // gsap.utils.toArray(".section").forEach((section: any, i) => {
-    //   gsap.to(".mainScrollScreen", {
-    //     immediateRender: false,
-    //     scrollTrigger: {
-    //       trigger: section,
-    //       scrub: true,
-
-    //       start: "top bottom",
-    //       end: "+=100%",
-    //       onEnter: () => {
-    //         gsap.to(".mainScrollScreen", {
-    //           duration: 1.0,
-    //           background: gsap.getProperty("html", `--bg${i}`),
-    //         });
-    //       },
-    //     },
-    //   });
-    // });
-
-    // gsap.utils.toArray(".section").forEach((section: any, i) => {
-    //   gsap.to(".mainScrollScreen", {
-    //     background: `--bg${i}`,
-    //     immediateRender: false,
-    //     scrollTrigger: {
-    //       trigger: section,
-    //       scrub: true,
-    //       start: "top bottom",
-    //       end: "+=100%",
-    //     },
-    //   });
-    // });
   };
   const graphicScroll = () => {
     const bgShape1 = gsap.timeline({
@@ -125,10 +82,41 @@ const gsapActions = ({ current }: any) => {
       duration: 2,
     });
   };
+  const shape2 = () => {
+    const bgShape2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".screen5",
+        //pin: true,
+        start: "top", // when the top of the trigger hits the top of the viewport
+        end: "+=500", // end after scrolling 500px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    });
+
+    bgShape2.fromTo(
+      "#shape2",
+      {
+        left: 50, //-100,
+        top: 0,
+        duration: 1,
+        opacity: 0.6,
+        zIndex: -1,
+      },
+      {
+        left: 50,
+        top: -200,
+        duration: 1,
+      }
+    );
+  };
+
+  const marquee = (marqueeText: any) => {};
 
   return {
-    timeLine1,
+    bgTimeLine,
     graphicScroll,
+    shape2,
+    marquee,
   };
 };
 

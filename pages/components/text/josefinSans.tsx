@@ -26,9 +26,11 @@ const JosefinSans = ({
   padding,
   textTransform = "uppercase",
   width,
+  ...rest
 }: IProps) => {
   return (
-    <h4
+    <Wrapper
+      {...rest}
       className={`font-JosefinSans  ${width} text-${size || "sm"} ${
         margin || "mt-10"
       } ${padding} ${
@@ -36,7 +38,7 @@ const JosefinSans = ({
       } ${textTransform} ${opacity} ${weight} text-${color || "white"}`}
     >
       {children}
-    </h4>
+    </Wrapper>
   );
 };
 

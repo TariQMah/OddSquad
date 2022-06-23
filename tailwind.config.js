@@ -15,6 +15,8 @@ module.exports = {
       colors: {
         yellowColor: "#FFE39D",
         yellowColor1: "#FBB551",
+        purpleColor1: "#EDDDF3",
+        twitter: "#5CC3E4",
       },
 
       opacity: {
