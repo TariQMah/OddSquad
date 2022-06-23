@@ -18,6 +18,9 @@ module.exports = {
         purpleColor1: "#EDDDF3",
         twitter: "#5CC3E4",
       },
+      fontSize: {
+        timeLine: "1.20rem",
+      },
 
       opacity: {
         0.3: "0.3",

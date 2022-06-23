@@ -4,8 +4,10 @@ import { useInView } from "react-intersection-observer";
 
 interface IProps {
   showLogo: boolean;
+  menuToggle: () => void;
+  showMenu: boolean;
 }
-const Index = ({ showLogo }: IProps) => {
+const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
     threshold: 0,
@@ -33,8 +35,18 @@ const Index = ({ showLogo }: IProps) => {
           </>
         )}
       </div>
-      <div className="burgerMenu absolute right-0 ml-auto p-2">
-        <img src="images/nave-burger-menu.png" />
+
+      <div
+        className="burgerMenu absolute right-0 ml-auto p-2"
+        onClick={menuToggle}
+      >
+        {showMenu ? (
+          <div className="text-1xl text-white">
+            <img src="images/cross.svg" className="text-white" />
+          </div>
+        ) : (
+          <img src="images/nave-burger-menu.png" />
+        )}
       </div>
     </div>
   );
