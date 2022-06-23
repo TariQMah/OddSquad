@@ -63,3 +63,14 @@ a {
 .screen5{
   /* background: url("../public/images/bgGraphic2.svg") no-repeat; */
 }
+
+.slider{
+  -webkit-transition: opacity 2000s ease-in-out;
+    -moz-transition: opacity 2000s ease-in-out;
+    -ms-transition: opacity 2000s ease-in-out;
+    -o-transition: opacity 2000s ease-in-out;
+     opacity: 1;
+}
+.slick-slide:not(.slick-active) {
+  opacity: 0.4;
+}

@@ -110,6 +110,34 @@ const gsapActions = ({ current }: any) => {
     );
   };
 
+  const bottomShape = () => {
+    const bgShape2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".screen12",
+        //pin: true,
+        start: "top", // when the top of the trigger hits the top of the viewport
+        end: "+=500", // end after scrolling 500px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    });
+
+    bgShape2.fromTo(
+      "#shapeBottom",
+      {
+        left: 50, //-100,
+        top: 0,
+        duration: 1,
+        opacity: 0.6,
+        zIndex: -1,
+      },
+      {
+        left: 50,
+        top: -200,
+        duration: 1,
+      }
+    );
+  };
+
   const marquee = (marqueeText: any) => {};
 
   return {
@@ -117,6 +145,7 @@ const gsapActions = ({ current }: any) => {
     graphicScroll,
     shape2,
     marquee,
+    bottomShape,
   };
 };
 

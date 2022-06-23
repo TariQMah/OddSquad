@@ -1,8 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { AiFillTwitterCircle } from "react-icons/ai";
-import { FiTwitter, FiInstagram } from "react-icons/fi";
-import { IoLogoInstagram } from "react-icons/io";
+
+import { FiArrowLeft } from "react-icons/fi";
+
 import { BsDiscord, BsInstagram } from "react-icons/bs";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -23,6 +24,10 @@ import ProductCard from "./components/productCart";
 import Benefits from "./components/benefits";
 import SocialButton from "./components/socialButtons/twitter";
 import TimelineComponent from "./components/timeline";
+import PeopleCard from "./components/peopleCard";
+import TestimonialsCard from "./components/testimonialCard";
+import Accordion from "./components/accordion";
+import { accordionData } from "./utils/accordion";
 
 import Link from "next/link";
 const Home: NextPage = () => {
@@ -31,7 +36,8 @@ const Home: NextPage = () => {
 
   const marqueeText = useRef<any>();
 
-  const { bgTimeLine, graphicScroll, shape2, marquee } = gsapActions(boxRef);
+  const { bgTimeLine, graphicScroll, shape2, marquee, bottomShape } =
+    gsapActions(boxRef);
   gsap.registerPlugin(ScrollTrigger);
   const [showMore, setShowMore] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -40,23 +46,75 @@ const Home: NextPage = () => {
     threshold: 0,
   });
 
-  const settings = {
-    dots: true,
+  const peopleSetting = {
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 2,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "10px",
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
+
+  const testimonialsSetting = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "50px",
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "50px",
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   useEffect(() => {
     bgTimeLine();
     graphicScroll();
+    bottomShape();
     shape2();
     marquee(marqueeText);
     return () => {
       bgTimeLine();
       graphicScroll();
       shape2();
+      bottomShape();
     };
   }, []);
 
@@ -146,7 +204,6 @@ const Home: NextPage = () => {
               </JosefinSans>
             </Link>
             <Newake tag="h4" size="lg">
-              {" "}
               JOIN OUR COMMUNITY
             </Newake>
 
@@ -223,7 +280,7 @@ const Home: NextPage = () => {
                 winning Mezcal from Oaxaca Mexico. <br />
                 <br />
                 The OddSquad is the world’s first NFT-powered members club for
-                mezcal lovers, coming 2022.{" "}
+                mezcal lovers, coming 2022.
               </Newake>
               <img
                 src="images/bottleLeft.png"
@@ -421,11 +478,8 @@ const Home: NextPage = () => {
                 Collaborations with top Mexican <br /> Artists, airdropped to
                 holders
               </Benefits>
-              <Benefits>
+              <Benefits subHeading={"*legal stipulations apply"}>
                 Free bottles of mezcal* <br /> and merch drops
-                <h4 className="opacity-60 font-Newake font-light text-xs">
-                  *legal stipulations apply
-                </h4>
               </Benefits>
               <Benefits>
                 Access to one off Limited Edition
@@ -468,6 +522,390 @@ const Home: NextPage = () => {
             </div>
           </div>
 
+          <div className="screen8 z-10 relative section">
+            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
+              JOIN THE QUEST
+            </Newake>
+            <div
+              className="marquee w-full -z-10 overflow-hidden whitespace-nowrap "
+              id="no01"
+              ref={marqueeText}
+            >
+              <JosefinSans
+                tag="h4"
+                color="white"
+                size="5xl"
+                width="w-auto"
+                className={"marqueeText"}
+                weight="font-extrabold	"
+                textTransform="uppercase"
+                margin="mt-0"
+              >
+                JOIN THE SQUAD
+              </JosefinSans>
+              <JosefinSans
+                tag="h4"
+                color="white"
+                width="w-auto"
+                size="5xl"
+                className={"marqueeText"}
+                weight="font-extrabold	"
+                textTransform="uppercase"
+                margin="mt-0"
+              >
+                JOIN THE SQUAD
+              </JosefinSans>
+            </div>
+
+            <div className="flex justify-between relative align-middle mt-10 flex-col ">
+              <img
+                src="images/bottleRight.png"
+                className="absolute right-0 top-0"
+              />
+              <div className="timeline my-20 relative">
+                <img src="images/timeline.svg" className="absolute -z-10" />
+
+                <TimelineComponent
+                  text="We launched our first joven mezcal made from 100% espadin
+                    agave to market - winning ‘Platinum’ at the prestigious SIPP
+                    awards"
+                  title="Ojo de Dios Mezcal launches"
+                  date="JUNE 2020"
+                  icon={true}
+                />
+                <img
+                  src="images/characterTimeline1.svg"
+                  className="absolute top-40 -left-8"
+                />
+                <TimelineComponent
+                  text="We launched our first joven mezcal made from 100% espadin
+                    agave to market - winning ‘Platinum’ at the prestigious SIPP
+                    awards"
+                  title="Ojo de Dios Mezcal launches"
+                  date="JUNE 2020"
+                  icon={false}
+                  margin="mt-11"
+                  width="w-60"
+                />
+                <TimelineComponent
+                  text="We launched our first joven mezcal made from 100% espadin
+                    agave to market - winning ‘Platinum’ at the prestigious SIPP
+                    awards"
+                  title="Ojo de Dios Mezcal launches"
+                  date="JUNE 2020"
+                  icon={false}
+                  margin="mt-10"
+                  width="w-10/12"
+                />
+                <TimelineComponent
+                  text="We launched our first joven mezcal made from 100% espadin
+                    agave to market - winning ‘Platinum’ at the prestigious SIPP
+                    awards"
+                  title="Ojo de Dios Mezcal launches"
+                  date="JUNE 2020"
+                  icon={false}
+                  margin="mt-7"
+                  width="w-11/12"
+                />
+
+                <img
+                  src="images/characterTimeline2.svg"
+                  className="right-0 relative mt-4 float-right"
+                />
+                <TimelineComponent
+                  text="We launched our first joven mezcal made from 100% espadin
+                    agave to market - winning ‘Platinum’ at the prestigious SIPP
+                    awards"
+                  title="Ojo de Dios Mezcal launches"
+                  date="JUNE 2020"
+                  icon={false}
+                  margin="mt-11"
+                  width="w-10/12"
+                />
+                <TimelineComponent
+                  text="We launched our first joven mezcal made from 100% espadin
+                    agave to market - winning ‘Platinum’ at the prestigious SIPP
+                    awards"
+                  title="Ojo de Dios Mezcal launches"
+                  date="JUNE 2020"
+                  icon={false}
+                  margin="mt-20"
+                  width="w-11/12"
+                  top="top-1"
+                />
+                <TimelineComponent
+                  text="We launched our first joven mezcal made from 100% espadin
+                    agave to market - winning ‘Platinum’ at the prestigious SIPP
+                    awards"
+                  title="Ojo de Dios Mezcal launches"
+                  date="JUNE 2020"
+                  icon={false}
+                  margin="mt-32"
+                  width="w-9/12"
+                />
+              </div>
+              <img
+                src="images/bottleRight.png"
+                className="absolute left-0 bottom-0"
+              />
+            </div>
+          </div>
+
+          <div className="screen9 z-10 relative section">
+            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
+              COMMUNITY
+            </Newake>
+            <div
+              className="  w-full -z-10 overflow-hidden"
+              id="no01"
+              ref={marqueeText}
+            >
+              <Newake
+                tag="h4"
+                color="white"
+                size="5xl"
+                width="w-9/12"
+                className={"marqueeText"}
+                weight="font-extrabold	"
+                textTransform="uppercase"
+                margin="mb-3 mx-auto"
+                align="text-center"
+              >
+                JOIN US BY THE FIRE
+              </Newake>
+
+              <SocialButton
+                bgColor="bg-purple-500"
+                text="JOIN OUR DISCORD"
+                icon={
+                  <BsDiscord
+                    size={"30px"}
+                    className="float-left"
+                    fill="white"
+                  />
+                }
+              />
+            </div>
+            <img
+              src="images/graphic_bg3.png"
+              className="w-full mx-auto my-10"
+            />
+          </div>
+
+          <div className="screen10 z-10 relative section">
+            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
+              The Team
+            </Newake>
+            <div
+              className="  w-full -z-10 overflow-hidden"
+              id="no01"
+              ref={marqueeText}
+            >
+              <Newake
+                tag="h4"
+                color="white"
+                size="4xl"
+                width="w-9/12"
+                className={"marqueeText"}
+                weight="font-extrabold	"
+                textTransform="inherit"
+                margin="mb-3 mx-auto"
+                align="text-center"
+              >
+                Crafted with love by our team of experts
+              </Newake>
+            </div>
+            <Slider className="my-10" {...peopleSetting}>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+            </Slider>
+          </div>
+
+          <div className="screen11 z-10 relative section">
+            <Slider className="my-20" {...testimonialsSetting}>
+              <div>
+                <TestimonialsCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <TestimonialsCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <TestimonialsCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <TestimonialsCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <TestimonialsCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+              <div>
+                <TestimonialsCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/peopelImage.png"
+                />
+              </div>
+            </Slider>
+          </div>
+
+          <div className="screen12 z-10 relative section">
+            <div className="accordion">
+              {accordionData.map(({ title, content }, index) => (
+                <Accordion key={index} title={title} content={content} />
+              ))}
+            </div>
+            <img
+              src="images/bgGraphic2.svg"
+              id="shapeBottom"
+              className="absolute z-0 -ml-40 "
+            />
+          </div>
+
+          <div className="screen13 z-10 relative section">
+            <div className="footer mx-3 py-5 bg-black rounded-2xl">
+              <img src="images/footerLogo.svg" className="mx-auto my-2" />
+
+              <div className="text-center">
+                <Link href={"#"}>
+                  <h4 className="text-white uppercase text-sm font-JosefinSans">
+                    OUR STORY
+                  </h4>
+                </Link>
+                <Link href={"#"}>
+                  <h4 className="text-white uppercase text-sm font-JosefinSans">
+                    NFT MEMEBRS PASS
+                  </h4>
+                </Link>
+                <Link href={"#"}>
+                  <h4 className="text-white uppercase text-sm font-JosefinSans">
+                    ROADMAP
+                  </h4>
+                </Link>
+                <Link href={"#"}>
+                  <h4 className="text-white uppercase text-sm font-JosefinSans">
+                    community
+                  </h4>
+                </Link>
+                <Link href={"#"}>
+                  <h4 className="text-white uppercase text-sm font-JosefinSans">
+                    team
+                  </h4>
+                </Link>
+                <Link href={"#"}>
+                  <h4 className="text-white uppercase text-sm font-JosefinSans">
+                    FAQ
+                  </h4>
+                </Link>
+              </div>
+
+              <Newake tag="h4" weight="font-light" size="lg">
+                JOIN OUR COMMUNITY
+              </Newake>
+
+              <div className="flex  justify-center mt-3">
+                <SocialIcon>
+                  <img src="images/instagram_white.png" className="" />
+                </SocialIcon>
+                <SocialIcon>
+                  <img src="images/discord_white.png" />
+                </SocialIcon>
+                <SocialIcon>
+                  <img src="images/twitter_white.png" />
+                </SocialIcon>
+              </div>
+              <div className="my-6">
+                <Button text={"CONNECT WALLET"} />
+              </div>
+              <p className="text-white flex mx-auto justify-center font-JosefinSans text-sm">
+                <FiArrowLeft className="mr-2" />
+                VISIT OJODEDIOS.COM
+              </p>
+            </div>
+          </div>
           {inView && <Footer />}
         </div>
         {/* <div className="panel w-full sec1">
