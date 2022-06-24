@@ -2,6 +2,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { AiFillTwitterCircle } from "react-icons/ai";
 
+import { BiDownArrowAlt } from "react-icons/bi";
+import Marquee from "react-fast-marquee";
+
 import { FiArrowLeft } from "react-icons/fi";
 
 import { BsDiscord, BsInstagram } from "react-icons/bs";
@@ -30,6 +33,7 @@ import Accordion from "./components/accordion";
 import { accordionData } from "./utils/accordion";
 
 import Link from "next/link";
+import DesktopHeader from "./components/header/desktop";
 const Home: NextPage = () => {
   const boxRef = useRef<any>();
   const menu = useRef<any>();
@@ -139,18 +143,18 @@ const Home: NextPage = () => {
             <Link href={"#"}>
               <JosefinSans
                 tag="h2"
-                size="3xl"
+                size="text-3xl"
                 weight="font-extrabold"
                 margin="mt-1"
                 padding="mt-1"
               >
-                OUR STORY
+                NFT MEMBERS PASS
               </JosefinSans>
             </Link>
             <Link href={"#"}>
               <JosefinSans
                 tag="h2"
-                size="3xl"
+                size="text-3xl"
                 weight="font-extrabold"
                 margin="mt-1"
                 padding="mt-1"
@@ -161,7 +165,7 @@ const Home: NextPage = () => {
             <Link href={"#"}>
               <JosefinSans
                 tag="h2"
-                size="3xl"
+                size="text-3xl"
                 weight="font-extrabold"
                 margin="mt-1"
                 padding="mt-1"
@@ -172,7 +176,7 @@ const Home: NextPage = () => {
             <Link href={"#"}>
               <JosefinSans
                 tag="h2"
-                size="3xl"
+                size="text-3xl"
                 weight="font-extrabold"
                 margin="mt-1"
                 padding="mt-1"
@@ -183,7 +187,7 @@ const Home: NextPage = () => {
             <Link href={"#"}>
               <JosefinSans
                 tag="h2"
-                size="3xl"
+                size="text-3xl"
                 weight="font-extrabold"
                 margin="mt-1"
                 padding="mt-1"
@@ -194,7 +198,7 @@ const Home: NextPage = () => {
             <Link href={"#"}>
               <JosefinSans
                 tag="h2"
-                size="3xl"
+                size="text-3xl"
                 weight="font-extrabold"
                 margin="mt-1"
                 padding="mt-1"
@@ -202,7 +206,7 @@ const Home: NextPage = () => {
                 FAQ
               </JosefinSans>
             </Link>
-            <Newake tag="h4" size="lg">
+            <Newake tag="h4" size="text-lg">
               JOIN OUR COMMUNITY
             </Newake>
 
@@ -225,53 +229,88 @@ const Home: NextPage = () => {
         className=" mx-auto overflow-hidden mainScrollScreen wrap "
         ref={boxRef}
       >
+        <div className="bg-black text-left p-2 hidden md:block">
+          <p className="text-white flex mx-auto  font-JosefinSans text-sm">
+            <FiArrowLeft className="mr-2" />
+            VISIT OJODEDIOS.COM
+          </p>
+        </div>
+
         <div className="overlayPattern">
+          <DesktopHeader />
           <Header
             showMenu={showMenu}
             menuToggle={menuToggle}
             showLogo={inView}
           />
-          <div className="screen1 section relative">
+          <div className="screen1 section relative" ref={ref}>
             <div className="logo mt-10 z-30 relative flex justify-center">
-              <img src="images/mainLogo.png" />
+              <img src="images/mainLogo.png" className="md:hidden" />
+              <img
+                src="images/desktopCharacter.png"
+                className="hidden md:block"
+              />
             </div>
+
             <img
               src="images/vectorBg.svg"
-              className="absolute z-0 top-10 bottom-auto"
+              className="absolute z-0 top-10 bottom-auto md:hidden"
             />
-            <Newake tag="h4">MINT AVAILABLE Q3 2022</Newake>
-            <Button text={"CONNECT WALLET"} />
 
-            <Newake tag="h4" className={"md:hidden"}>
-              JOIN OUR COMMUNITY
-            </Newake>
+            <img
+              src="images/mountains.svg"
+              className="absolute -z-10 top-10 bottom-auto hidden md:block"
+            />
+            <div className="md:hidden">
+              <Newake tag="h4">MINT AVAILABLE Q3 2022</Newake>
+              <Button text={"CONNECT WALLET"} />
 
-            <div className="flex justify-center mt-3">
-              <SocialIcon>
-                <img src="images/instagram_white.png" className="" />
-              </SocialIcon>
-              <SocialIcon>
-                <img src="images/discord_white.png" />
-              </SocialIcon>
-              <SocialIcon>
-                <img src="images/twitter_white.png" />
-              </SocialIcon>
+              <Newake tag="h4" className={"md:hidden"}>
+                JOIN OUR COMMUNITY
+              </Newake>
+
+              <div className="flex justify-center mt-3">
+                <SocialIcon>
+                  <img src="images/instagram_white.png" className="" />
+                </SocialIcon>
+                <SocialIcon>
+                  <img src="images/discord_white.png" />
+                </SocialIcon>
+                <SocialIcon>
+                  <img src="images/twitter_white.png" />
+                </SocialIcon>
+              </div>
+            </div>
+            <div className="hidden md:block mb-20">
+              <div className="bg-opacity-70 bg-white w-12 h-12 rounded-full border border-white flex justify-center items-center mx-auto">
+                <BiDownArrowAlt className="h-6 w-6 text-white " />
+              </div>
             </div>
           </div>
           <div className="screen2 section md:container md:mx-auto">
             <div className="w-full py-12  relative text-center">
               <img
                 src="images/bottleRight.png"
-                className="absolute right-0 top-0 md:top-10"
+                className="absolute right-0 top-0 md:hidden"
+              />
+              <img
+                src="images/bottleDesktop.png"
+                className="absolute right-0 top-0 hidden md:block md:top-30"
               />
 
-              <Newake tag="h4" size="lg" color="yellowColor">
-                OUR STORY
+              <Newake
+                tag="h4"
+                media="md:text-2xl"
+                size="text-lg"
+                color="yellowColor"
+              >
+                Our Story
               </Newake>
 
               <Newake
                 tag="h2"
-                size="2xl"
+                size="text-2xl"
+                media="md:text-7xl"
                 color="white"
                 padding="px-2"
                 margin="mt-5 mb-20  md:mx-auto"
@@ -286,43 +325,67 @@ const Home: NextPage = () => {
               </Newake>
               <img
                 src="images/bottleLeft.png"
-                className="absolute left-0 bottom-0"
+                className="absolute left-0 bottom-0 md:hidden"
+              />
+              <img
+                src="images/bottleBlackDesktop.png"
+                className="absolute left-0 bottom-0 md:block hidden"
               />
             </div>
           </div>
           <div className="relative h-full">
             <div className="screen3  md:container md:mx-auto  z-10 relative section">
-              <div className="w-full py-12 relative text-center group ">
-                <ChatBubble align="left" message={"Hola!"} left={2} />
-                <ChatBubble
-                  align="right"
-                  message={
-                    "I’m Oddball, leader of the OddSquad and your spirit guide to all that is Ojo de Dios, mezcal and Mexico."
-                  }
-                  left={3}
-                />
-                <ChatBubble
-                  align="left"
-                  message={
-                    "I’m here to ask you for your help on my quest for the 4 elements..."
-                  }
-                  left={1}
-                />
-                <ChatBubble align="right" message={"Care to join?"} left={5} />
+              <div className="w-full py-12 px-2 relative text-center group ">
+                <div className=" md:flex md:justify-center">
+                  <img
+                    src="images/desktopCharacterBlack.png"
+                    className="w-auto h-auto object-contain hidden md:block"
+                  />
+                  <div className="md:w-auto  w-full md:mr-96">
+                    <ChatBubble
+                      align="left"
+                      message={"Hola!"}
+                      left={"left-12 md:left-15"}
+                      fontSize={"md:text-2xl"}
+                    />
+                    <ChatBubble
+                      align="right"
+                      message={
+                        "I’m Oddball, leader of the OddSquad and your spirit guide to all that is Ojo de Dios, mezcal and Mexico."
+                      }
+                      left={"left-0 md:left-28"}
+                      fontSize={"md:text-2xl"}
+                    />
+                    <ChatBubble
+                      align="left"
+                      message={
+                        "I’m here to ask you for your help on my quest for the 4 elements..."
+                      }
+                      left={"left-5 md:left-0"}
+                      fontSize={"md:text-2xl"}
+                    />
+                    <ChatBubble
+                      align="right"
+                      message={"Care to join?"}
+                      left={"left-0 md:left-28"}
+                      fontSize={"md:text-2xl"}
+                    />
 
-                <img
-                  src="images/graphicCharacter.png"
-                  className="absolute z-0 -bottom-9"
-                />
+                    <img
+                      src="images/graphicCharacter.png"
+                      className="absolute z-0 -bottom-9 md:hidden"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <img
               src="images/bgShape1.png"
               id="shape1"
-              className="absolute bgShape1 z-0 ml-40 "
+              className="absolute bgShape1 z-0 ml-40 md:mr-0 md:ml-auto "
             />
             <div className="screen4 md:container md:mx-auto py-40 z-10 relative section">
-              <div className="bg-gray-900 md:w-8/12 bg-opacity-0.3 border flex justify-center items-center border-white border-2   h-60  w-10/12 m-auto rounded-2xl h-32 relative">
+              <div className="bg-gray-900 md:w-8/12 bg-opacity-0.3 border flex justify-center items-center border-white border-2   h-60 md:h-96  w-10/12 m-auto rounded-2xl h-32 relative">
                 <div className="ml-24 top-auto bottom-auto flex  items-center">
                   <div className="icon">
                     <img src="images/playButton.svg" className="" />
@@ -331,7 +394,7 @@ const Home: NextPage = () => {
                     <Newake
                       margin="mt-0 ml-2"
                       align="text-left"
-                      size="sm"
+                      size="text-sm"
                       tag="h4"
                     >
                       PLAY OUR FILM
@@ -340,7 +403,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
 
-              <div className="bg-black bg-opacity-0.3   px-7 py-5  my-5  h-60  w-10/12 m-auto rounded-2xl  relative">
+              <div className="bg-black bg-opacity-0.3 md:my-20 md:py-20  md:px-20    px-7 py-5  my-5 md:h-80  h-60  w-10/12 m-auto rounded-2xl  relative">
                 <div className="flex  flex-row flex-1 align-top">
                   <img src="images/book-open.svg" className="w-5 h-5" />
                   <div className="h-5">
@@ -348,7 +411,7 @@ const Home: NextPage = () => {
                       width="w-5/12"
                       margin="mt-0 ml-2"
                       align="text-left"
-                      size="sm"
+                      size="text-sm md:text-xl"
                       tag="h4"
                       color="yellowColor1"
                     >
@@ -359,7 +422,7 @@ const Home: NextPage = () => {
                       width="w-12/12"
                       margin="mt-5 ml-2"
                       align="text-left"
-                      size="sm"
+                      size="text-sm md:text-3xl"
                       tag="h4"
                       color="white"
                       weight="font-normal"
@@ -379,7 +442,7 @@ const Home: NextPage = () => {
                           tag="h4"
                           color="white"
                           opacity="text-opacity-50"
-                          size="xs"
+                          size="text-xs"
                           weight="font-bold"
                           textTransform="uppercase"
                           margin="m-0 ml-2"
@@ -400,38 +463,34 @@ const Home: NextPage = () => {
               id="shape2"
               className="absolute z-0 -ml-40 "
             />
-            <Newake tag="h4" size="lg" color="yellowColor">
-              OUR STORY
+            <Newake
+              tag="h4"
+              media=""
+              size="text-lg md:text-2xl"
+              color="yellowColor"
+            >
+              NFT MEMBERS PASS
             </Newake>
             <div
-              className="marquee w-full -z-10 overflow-hidden whitespace-nowrap "
+              className=" w-full -z-10 overflow-hidden whitespace-nowrap "
               id="no01"
               ref={marqueeText}
             >
-              <JosefinSans
-                tag="h4"
-                color="white"
-                size="5xl"
-                width="w-auto"
-                className={"marqueeText"}
-                weight="font-extrabold	"
-                textTransform="uppercase"
-                margin="mt-0"
-              >
-                JOIN THE SQUAD
-              </JosefinSans>
-              <JosefinSans
-                tag="h4"
-                color="white"
-                width="w-auto"
-                size="5xl"
-                className={"marqueeText"}
-                weight="font-extrabold	"
-                textTransform="uppercase"
-                margin="mt-0"
-              >
-                JOIN THE SQUAD
-              </JosefinSans>
+              <Marquee className="marquee" speed={100}>
+                <JosefinSans
+                  tag="h4"
+                  color="white"
+                  width="w-auto"
+                  size="text-8xl  md:text-10xl"
+                  className={"marqueeText"}
+                  weight="font-extrabold	"
+                  textTransform="uppercase"
+                  margin="mt-0"
+                >
+                  JOIN THE SQUAD JOIN THE SQUAD JOIN THE SQUAD JOIN THE SQUAD
+                  JOIN THE SQUAD JOIN THE SQUAD
+                </JosefinSans>
+              </Marquee>
             </div>
 
             <ProductCard />
@@ -464,8 +523,8 @@ const Home: NextPage = () => {
               <div className="clear-both"></div>
             </div>
           </div>
-          <div className="screen6 z-10  relative section">
-            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
+          <div className="screen6 z-10 my-32  relative section">
+            <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
               OG MEMBER BENEFITS
             </Newake>
             <div className="">
@@ -494,72 +553,70 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="screen7 z-10  relative section">
-            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
-              JOIN THE QUEST
-            </Newake>
-
-            <div className="flex justify-between align-middle mt-10  flex-col h-3/5">
-              <p className="text-4xl my-6 font-Newake px-4  text-white text-center  ">
-                Follow us for a whitelist spot and join the whitelist spot
-              </p>
-              <div className="">
-                <SocialButton
-                  text="Follow us on twitter"
-                  icon={
-                    <AiFillTwitterCircle
-                      size={"30px"}
-                      className="float-left"
-                      fill="white"
-                    />
-                  }
-                />
-                <h4 className="font-Newake text-center mt-5 text-white text-5xl capitalize">
-                  20,471
-                </h4>
-                <p className="text-xl text-center text-white font-Newake capitalize">
-                  CURRENT FOLLOWRES
+          <div className="screen7 z-10   my-32 relative md:flex section">
+            <div className="w-full ">
+              <Newake
+                tag="h4"
+                margin="mb-4 md:mb-0"
+                color="yellowColor"
+                size="text-lg md:text-2xl"
+              >
+                JOIN THE QUEST
+              </Newake>
+              <div className="flex justify-between align-middle mt-10 md:mt-0  flex-col h-3/5">
+                <p className="text-4xl my-6 font-Newake px-4  text-white text-center md:w-6/12  ">
+                  Follow us for a whitelist spot and join the whitelist spot
                 </p>
+                <div className="">
+                  <SocialButton
+                    text="Follow us on twitter"
+                    icon={
+                      <AiFillTwitterCircle
+                        size={"30px"}
+                        className="float-left"
+                        fill="white"
+                      />
+                    }
+                  />
+                  <h4 className="font-Newake text-center mt-5 text-white text-5xl capitalize">
+                    20,471
+                  </h4>
+                  <p className="text-xl text-center text-white font-Newake capitalize">
+                    CURRENT FOLLOWRES
+                  </p>
+                </div>
               </div>
+            </div>
+            <div className="md:block hidden">
+              <img src="images/keyArt_Cafe.png" />
             </div>
           </div>
 
           <div className="screen8 z-10 relative section">
-            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
-              JOIN THE QUEST
+            <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
+              ROADMAP
             </Newake>
             <div
               className="marquee w-full -z-10 overflow-hidden whitespace-nowrap "
               id="no01"
-              ref={marqueeText}
             >
-              <JosefinSans
-                tag="h4"
-                color="white"
-                size="5xl"
-                width="w-auto"
-                className={"marqueeText"}
-                weight="font-extrabold	"
-                textTransform="uppercase"
-                margin="mt-0"
-              >
-                JOIN THE SQUAD
-              </JosefinSans>
-              <JosefinSans
-                tag="h4"
-                color="white"
-                width="w-auto"
-                size="5xl"
-                className={"marqueeText"}
-                weight="font-extrabold	"
-                textTransform="uppercase"
-                margin="mt-0"
-              >
-                JOIN THE SQUAD
-              </JosefinSans>
+              <Marquee className="marquee" speed={100}>
+                <JosefinSans
+                  tag="h4"
+                  color="white"
+                  size="text-8xl"
+                  width="w-auto"
+                  className={"marqueeText"}
+                  weight="font-extrabold"
+                  textTransform="uppercase"
+                  margin="mt-0"
+                >
+                  Our Journey Our Journey Our Journey Our Journey Our Journey
+                </JosefinSans>
+              </Marquee>
             </div>
 
-            <div className="flex justify-between relative align-middle mt-10 flex-col md:hidden ">
+            <div className="flex justify-between relative align-middle  flex-col md:hidden ">
               <img
                 src="images/bottleRight.png"
                 className="absolute right-0 top-0"
@@ -654,7 +711,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen9 z-10 relative section">
-            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
+            <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
               COMMUNITY
             </Newake>
             <div
@@ -665,7 +722,7 @@ const Home: NextPage = () => {
               <Newake
                 tag="h4"
                 color="white"
-                size="5xl"
+                size="text-5xl"
                 width="w-9/12"
                 className={"marqueeText"}
                 weight="font-extrabold	"
@@ -695,7 +752,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen10 z-10 relative section">
-            <Newake tag="h4" margin="mb-4" size="lg" color="yellowColor">
+            <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
               The Team
             </Newake>
             <div
@@ -706,7 +763,7 @@ const Home: NextPage = () => {
               <Newake
                 tag="h4"
                 color="white"
-                size="4xl"
+                size="text-4xl"
                 width="w-9/12"
                 className={"marqueeText"}
                 weight="font-extrabold	"
@@ -834,7 +891,7 @@ const Home: NextPage = () => {
             </Slider>
           </div>
 
-          <div className="screen12 z-10 relative section">
+          <div className="screen12 z-10 my-20 relative section">
             <div className="accordion">
               {accordionData.map(({ title, content }, index) => (
                 <Accordion key={index} title={title} content={content} />
@@ -854,7 +911,7 @@ const Home: NextPage = () => {
               <div className="text-center">
                 <Link href={"#"}>
                   <h4 className="text-white uppercase text-sm font-JosefinSans">
-                    OUR STORY
+                    NFT MEMBERS PASS
                   </h4>
                 </Link>
                 <Link href={"#"}>
@@ -884,7 +941,7 @@ const Home: NextPage = () => {
                 </Link>
               </div>
 
-              <Newake tag="h4" weight="font-light" size="lg">
+              <Newake tag="h4" weight="font-light" size="text-lg">
                 JOIN OUR COMMUNITY
               </Newake>
 
@@ -908,7 +965,7 @@ const Home: NextPage = () => {
               </p>
             </div>
           </div>
-          {inView && <Footer />}
+          {!inView && <Footer />}
         </div>
         {/* <div className="panel w-full sec1">
           <h1 className="w-full	">asd</h1>

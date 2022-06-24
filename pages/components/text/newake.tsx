@@ -12,22 +12,24 @@ interface IProps {
   weight?: string;
   textTransform?: string;
   width?: string;
+  media?: string;
 }
 const Newake = ({
   tag: Wrapper = "div",
   children,
   color,
-  size = "xl",
+  size = "text-lg",
   margin,
   align,
   weight,
   padding,
   textTransform = "uppercase",
   width = "full",
+  media,
 }: IProps) => {
   return (
     <Wrapper
-      className={`font-Newake ${width} text-${size} ${
+      className={`font-Newake ${width} ${media} ${size} ${
         margin || "mt-10"
       } ${padding} ${align || "text-center"} ${textTransform}  text-${
         color || "white"

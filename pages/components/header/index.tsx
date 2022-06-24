@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import useScrollListener from "../../hooks/scrollListner";
-import { useInView } from "react-intersection-observer";
 
 interface IProps {
   showLogo: boolean;
@@ -8,16 +6,11 @@ interface IProps {
   showMenu: boolean;
 }
 const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    threshold: 0,
-  });
-
   //   const [showLogo, setShowLogo] = useState(false);
 
   return (
     <div
-      className={`head z-50 flex fixed w-full top-5  ${
+      className={`head md:hidden z-50 flex fixed w-full top-5  ${
         showLogo ? "justify-between" : "justify-center"
       }`}
     >

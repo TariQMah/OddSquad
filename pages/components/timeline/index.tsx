@@ -32,7 +32,7 @@ const Index = ({
         <Newake
           tag="h4"
           margin="m-0"
-          size="timeLine"
+          size="text-timeLine"
           weight="font-normal"
           width="w-10/12"
           align="left"

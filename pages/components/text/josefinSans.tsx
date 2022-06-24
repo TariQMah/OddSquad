@@ -31,7 +31,7 @@ const JosefinSans = ({
   return (
     <Wrapper
       {...rest}
-      className={`font-JosefinSans   ${width} text-${size || "sm"} ${
+      className={`font-JosefinSans   ${width} ${size} ${
         margin || "mt-10"
       } ${padding} ${
         align || "text-center"
