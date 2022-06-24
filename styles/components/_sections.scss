@@ -1,0 +1,28 @@
+
+
+.screen1{
+    @media (min-width:1025px){
+        padding-top: 120px;
+    }
+
+    .main-logo{
+        &.mobile{
+            @media (min-width:$desktop){
+                display:none;
+            }
+        }
+        &.desktop{
+            @media (max-width:$tabletMobile){
+                display:none;
+            }
+        }
+    }
+
+    .mountain{
+        width: 100%;
+    }
+
+    .main-img{
+        max-width: 70%;       
+    }
+}

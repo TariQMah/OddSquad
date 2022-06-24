@@ -28,6 +28,7 @@ import PeopleCard from "./components/peopleCard";
 import TestimonialsCard from "./components/testimonialCard";
 import Accordion from "./components/accordion";
 import { accordionData } from "./utils/accordion";
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 
 import Link from "next/link";
 const Home: NextPage = () => {
@@ -135,7 +136,6 @@ const Home: NextPage = () => {
           className="menu fixed z-50 w-full overflow-hidden bg-black opacity-90 backdrop-blur-md	 h-full"
           ref={menu}
         >
-          asdasd
           <div className="h-full my-36">
             <Link href={"#"}>
               <JosefinSans
@@ -232,13 +232,19 @@ const Home: NextPage = () => {
             menuToggle={menuToggle}
             showLogo={inView}
           />
+
+          
           <div className="screen1 section relative">
             <div className="logo mt-10 z-30 relative flex justify-center">
-              <img src="images/mainLogo.png" />
+              <img className="main-logo mobile" src="images/mainLogo.png" />
+              <img className="main-logo desktop" src="images/NFTSec1.svg" />
+              <div className="clearfix text-center">
+                <Link href="#screen2"><img className="circledown hide-mobile" src="images/circleDown.svg"/></Link>
+              </div>
             </div>
             <img
               src="images/vectorBg.svg"
-              className="absolute z-0 top-10 bottom-auto"
+              className="mountain absolute z-0 top-10 bottom-auto"
             />
             <Newake tag="h4">MINT AVAILABLE Q3 2022</Newake>
             <Button text={"CONNECT WALLET"} />
@@ -257,7 +263,10 @@ const Home: NextPage = () => {
               </SocialIcon>
             </div>
           </div>
-          <div className="screen2 section">
+
+
+
+          <div className="screen2 section" id="screen2">
             <div className="w-full py-12 relative text-center">
               <img
                 src="images/bottleRight.png"

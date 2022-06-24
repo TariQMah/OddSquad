@@ -1,0 +1,31 @@
+.container-center{
+    max-width: 1400px;
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.clearfix{
+    &::before,
+    &::after{
+        content:'';
+        display:table;
+        clear:both;
+    }
+}
+
+.section{
+    @extend .clearfix;
+}
+
+.hide-mobile{
+    @media (max-width:$tabletMobile){
+        display:none !important;
+    }
+}
+
+.hide-desktop{
+    @media (max-width:$desktop){
+        display:none !important;
+    }
+}
