@@ -135,7 +135,6 @@ const Home: NextPage = () => {
           className="menu fixed z-50 w-full overflow-hidden bg-black opacity-90 backdrop-blur-md	 h-full"
           ref={menu}
         >
-          asdasd
           <div className="h-full my-36">
             <Link href={"#"}>
               <JosefinSans
@@ -243,7 +242,9 @@ const Home: NextPage = () => {
             <Newake tag="h4">MINT AVAILABLE Q3 2022</Newake>
             <Button text={"CONNECT WALLET"} />
 
-            <Newake tag="h4"> JOIN OUR COMMUNITY</Newake>
+            <Newake tag="h4" className={"md:hidden"}>
+              JOIN OUR COMMUNITY
+            </Newake>
 
             <div className="flex justify-center mt-3">
               <SocialIcon>
@@ -257,11 +258,11 @@ const Home: NextPage = () => {
               </SocialIcon>
             </div>
           </div>
-          <div className="screen2 section">
-            <div className="w-full py-12 relative text-center">
+          <div className="screen2 section md:container md:mx-auto">
+            <div className="w-full py-12  relative text-center">
               <img
                 src="images/bottleRight.png"
-                className="absolute right-0 top-0"
+                className="absolute right-0 top-0 md:top-10"
               />
 
               <Newake tag="h4" size="lg" color="yellowColor">
@@ -273,8 +274,9 @@ const Home: NextPage = () => {
                 size="2xl"
                 color="white"
                 padding="px-2"
-                margin="mt-5 mb-20"
+                margin="mt-5 mb-20  md:mx-auto"
                 textTransform="uppercase"
+                width=" md:w-8/12"
               >
                 Ojo de Dios is the eye to the soul of Mexico, a MASTER award
                 winning Mezcal from Oaxaca Mexico. <br />
@@ -289,7 +291,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="relative h-full">
-            <div className="screen3  z-10 relative section">
+            <div className="screen3  md:container md:mx-auto  z-10 relative section">
               <div className="w-full py-12 relative text-center group ">
                 <ChatBubble align="left" message={"Hola!"} left={2} />
                 <ChatBubble
@@ -319,8 +321,8 @@ const Home: NextPage = () => {
               id="shape1"
               className="absolute bgShape1 z-0 ml-40 "
             />
-            <div className="screen4 py-40 z-10 relative section">
-              <div className="bg-gray-900 bg-opacity-0.3 border flex justify-center items-center border-white border-2   h-60  w-10/12 m-auto rounded-2xl h-32 relative">
+            <div className="screen4 md:container md:mx-auto py-40 z-10 relative section">
+              <div className="bg-gray-900 md:w-8/12 bg-opacity-0.3 border flex justify-center items-center border-white border-2   h-60  w-10/12 m-auto rounded-2xl h-32 relative">
                 <div className="ml-24 top-auto bottom-auto flex  items-center">
                   <div className="icon">
                     <img src="images/playButton.svg" className="" />
@@ -557,7 +559,7 @@ const Home: NextPage = () => {
               </JosefinSans>
             </div>
 
-            <div className="flex justify-between relative align-middle mt-10 flex-col ">
+            <div className="flex justify-between relative align-middle mt-10 flex-col md:hidden ">
               <img
                 src="images/bottleRight.png"
                 className="absolute right-0 top-0"
