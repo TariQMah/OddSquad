@@ -26,7 +26,9 @@ import JosefinSans from "./components/text/josefinSans";
 import ProductCard from "./components/productCart";
 import Benefits from "./components/benefits";
 import SocialButton from "./components/socialButtons/twitter";
-import TimelineComponent from "./components/timeline";
+import MobileTimelineComponent from "./components/timeline/mobile";
+import DesktopTimelineComponent from "./components/timeline/desktop";
+
 import PeopleCard from "./components/peopleCard";
 import TestimonialsCard from "./components/testimonialCard";
 import Accordion from "./components/accordion";
@@ -524,7 +526,13 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="screen6 z-10 my-32  relative section">
-            <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
+            <Newake
+              tag="h4"
+              media=""
+              margin="mb-4"
+              size="text-lg md:text-2xl"
+              color="yellowColor"
+            >
               OG MEMBER BENEFITS
             </Newake>
             <div className="">
@@ -554,7 +562,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen7 z-10   my-32 relative md:flex section">
-            <div className="w-full ">
+            <div className="w-full md:flex md:justify-center md:flex-col md:w-6/12 ">
               <Newake
                 tag="h4"
                 margin="mb-4 md:mb-0"
@@ -563,11 +571,11 @@ const Home: NextPage = () => {
               >
                 JOIN THE QUEST
               </Newake>
-              <div className="flex justify-between align-middle mt-10 md:mt-0  flex-col h-3/5">
-                <p className="text-4xl my-6 font-Newake px-4  text-white text-center md:w-6/12  ">
+              <div className="flex justify-between md:align-top md:justify-start   align-middle mt-10 md:mt-0  flex-col h-3/5">
+                <p className="text-4xl my-6 font-Newake px-4 md:mx-auto  text-white text-center md:w-6/12  ">
                   Follow us for a whitelist spot and join the whitelist spot
                 </p>
-                <div className="">
+                <div className=" md:mx-auto  m:w-6/12">
                   <SocialButton
                     text="Follow us on twitter"
                     icon={
@@ -587,13 +595,18 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="md:block hidden">
+            <div className="md:block hidden md:w-6/12">
               <img src="images/keyArt_Cafe.png" />
             </div>
           </div>
 
           <div className="screen8 z-10 relative section">
-            <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
+            <Newake
+              tag="h4"
+              margin="mb-4"
+              size="text-lg md:text-2xl"
+              color="yellowColor"
+            >
               ROADMAP
             </Newake>
             <div
@@ -616,98 +629,8 @@ const Home: NextPage = () => {
               </Marquee>
             </div>
 
-            <div className="flex justify-between relative align-middle  flex-col md:hidden ">
-              <img
-                src="images/bottleRight.png"
-                className="absolute right-0 top-0"
-              />
-              <div className="timeline my-20 relative">
-                <img src="images/timeline.svg" className="absolute -z-10" />
-
-                <TimelineComponent
-                  text="We launched our first joven mezcal made from 100% espadin
-                    agave to market - winning ‘Platinum’ at the prestigious SIPP
-                    awards"
-                  title="Ojo de Dios Mezcal launches"
-                  date="JUNE 2020"
-                  icon={true}
-                />
-                <img
-                  src="images/characterTimeline1.svg"
-                  className="absolute top-40 -left-8"
-                />
-                <TimelineComponent
-                  text="We launched our first joven mezcal made from 100% espadin
-                    agave to market - winning ‘Platinum’ at the prestigious SIPP
-                    awards"
-                  title="Ojo de Dios Mezcal launches"
-                  date="JUNE 2020"
-                  icon={false}
-                  margin="mt-11"
-                  width="w-60"
-                />
-                <TimelineComponent
-                  text="We launched our first joven mezcal made from 100% espadin
-                    agave to market - winning ‘Platinum’ at the prestigious SIPP
-                    awards"
-                  title="Ojo de Dios Mezcal launches"
-                  date="JUNE 2020"
-                  icon={false}
-                  margin="mt-10"
-                  width="w-10/12"
-                />
-                <TimelineComponent
-                  text="We launched our first joven mezcal made from 100% espadin
-                    agave to market - winning ‘Platinum’ at the prestigious SIPP
-                    awards"
-                  title="Ojo de Dios Mezcal launches"
-                  date="JUNE 2020"
-                  icon={false}
-                  margin="mt-7"
-                  width="w-11/12"
-                />
-
-                <img
-                  src="images/characterTimeline2.svg"
-                  className="right-0 relative mt-4 float-right"
-                />
-                <TimelineComponent
-                  text="We launched our first joven mezcal made from 100% espadin
-                    agave to market - winning ‘Platinum’ at the prestigious SIPP
-                    awards"
-                  title="Ojo de Dios Mezcal launches"
-                  date="JUNE 2020"
-                  icon={false}
-                  margin="mt-11"
-                  width="w-10/12"
-                />
-                <TimelineComponent
-                  text="We launched our first joven mezcal made from 100% espadin
-                    agave to market - winning ‘Platinum’ at the prestigious SIPP
-                    awards"
-                  title="Ojo de Dios Mezcal launches"
-                  date="JUNE 2020"
-                  icon={false}
-                  margin="mt-20"
-                  width="w-11/12"
-                  top="top-1"
-                />
-                <TimelineComponent
-                  text="We launched our first joven mezcal made from 100% espadin
-                    agave to market - winning ‘Platinum’ at the prestigious SIPP
-                    awards"
-                  title="Ojo de Dios Mezcal launches"
-                  date="JUNE 2020"
-                  icon={false}
-                  margin="mt-32"
-                  width="w-9/12"
-                />
-              </div>
-              <img
-                src="images/bottleRight.png"
-                className="absolute left-0 bottom-0"
-              />
-            </div>
+            <DesktopTimelineComponent />
+            <MobileTimelineComponent />
           </div>
 
           <div className="screen9 z-10 relative section">

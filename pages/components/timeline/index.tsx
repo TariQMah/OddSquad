@@ -9,6 +9,9 @@ interface IProps {
   left?: string;
   top?: string;
   width?: string;
+  headingSize?: string;
+  dateSize?: string;
+  textSize?: string;
 }
 const Index = ({
   date,
@@ -19,12 +22,21 @@ const Index = ({
   left = "left-0",
   top = "top-0",
   width = "w-72",
+  headingSize = "text-lg",
+  dateSize = "text-lg",
+  textSize = "text-lg",
 }: IProps) => {
   return (
     <div
       className={` ${width} top-0 ${margin} ${left} ${top} relative  float-right inline-block`}
     >
-      <Newake tag="h4" margin="m-0" align="left" size="lg" color="yellowColor">
+      <Newake
+        tag="h4"
+        margin="m-0"
+        align="left"
+        size={`text-lg ${dateSize}`}
+        color="yellowColor"
+      >
         {date}
       </Newake>
 
@@ -32,7 +44,7 @@ const Index = ({
         <Newake
           tag="h4"
           margin="m-0"
-          size="text-timeLine"
+          size={`text-timeLine ${headingSize}`}
           weight="font-normal"
           width="w-10/12"
           align="left"
@@ -47,7 +59,7 @@ const Index = ({
         )}
       </div>
 
-      <p className="text-white text-sm">{text}</p>
+      <p className={`text-white text-sm  ${textSize}`}>{text}</p>
     </div>
   );
 };
