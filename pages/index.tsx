@@ -124,6 +124,16 @@ const Home: NextPage = () => {
   const menuToggle = () => {
     setShowMenu(!showMenu);
   };
+
+
+  const scrollToTop = (ele:string) => {
+    let pos = document?.getElementById(ele)?.offsetTop;
+    window.scrollTo({
+      top: pos,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div>
       <Head>
@@ -235,39 +245,47 @@ const Home: NextPage = () => {
 
           
           <div className="screen1 section relative">
-            <div className="logo mt-10 z-30 relative flex justify-center">
-              <img className="main-logo mobile" src="images/mainLogo.png" />
-              <img className="main-logo desktop" src="images/NFTSec1.svg" />
+            <div className="logo mt-10 z-30 relative">
+              <div className="flex justify-center">
+                <img className="main-logo mobile" src="images/mainLogo.png" />
+                <img className="main-logo desktop" src="images/NFTSec1.svg" />
+              </div>
               <div className="clearfix text-center">
-                <Link href="#screen2"><img className="circledown hide-mobile" src="images/circleDown.svg"/></Link>
+                <span className="cursor-pointer" onClick={()=>scrollToTop('screen2')}>
+                  <img className="circledown hide-mobile d-inline-block" src="images/circleDown.svg"/>
+                </span>
               </div>
             </div>
             <img
               src="images/vectorBg.svg"
               className="mountain absolute z-0 top-10 bottom-auto"
             />
-            <Newake tag="h4">MINT AVAILABLE Q3 2022</Newake>
-            <Button text={"CONNECT WALLET"} />
 
-            <Newake tag="h4"> JOIN OUR COMMUNITY</Newake>
+            <MobileView>
+              <Newake tag="h4">MINT AVAILABLE Q3 2022</Newake>
+              <Button text={"CONNECT WALLET"} />
 
-            <div className="flex justify-center mt-3">
-              <SocialIcon>
-                <img src="images/instagram_white.png" className="" />
-              </SocialIcon>
-              <SocialIcon>
-                <img src="images/discord_white.png" />
-              </SocialIcon>
-              <SocialIcon>
-                <img src="images/twitter_white.png" />
-              </SocialIcon>
-            </div>
+              <Newake tag="h4"> JOIN OUR COMMUNITY</Newake>
+
+              <div className="flex justify-center mt-3">
+                <SocialIcon>
+                  <img src="images/instagram_white.png" className="" />
+                </SocialIcon>
+                <SocialIcon>
+                  <img src="images/discord_white.png" />
+                </SocialIcon>
+                <SocialIcon>
+                  <img src="images/twitter_white.png" />
+                </SocialIcon>
+              </div>
+            </MobileView>
           </div>
 
 
 
           <div className="screen2 section" id="screen2">
-            <div className="w-full py-12 relative text-center">
+            <div className="container-center">
+            <div className="w-full py-12 px-10 relative text-center">
               <img
                 src="images/bottleRight.png"
                 className="absolute right-0 top-0"
@@ -283,7 +301,7 @@ const Home: NextPage = () => {
                 color="white"
                 padding="px-2"
                 margin="mt-5 mb-20"
-                textTransform="uppercase"
+                // textTransform="uppercase"
               >
                 Ojo de Dios is the eye to the soul of Mexico, a MASTER award
                 winning Mezcal from Oaxaca Mexico. <br />
@@ -296,38 +314,52 @@ const Home: NextPage = () => {
                 className="absolute left-0 bottom-0"
               />
             </div>
+            </div>
           </div>
+
+
           <div className="relative h-full">
             <div className="screen3  z-10 relative section">
+              <div className="container-center">
               <div className="w-full py-12 relative text-center group ">
-                <ChatBubble align="left" message={"Hola!"} left={2} />
-                <ChatBubble
-                  align="right"
-                  message={
-                    "I’m Oddball, leader of the OddSquad and your spirit guide to all that is Ojo de Dios, mezcal and Mexico."
-                  }
-                  left={3}
-                />
-                <ChatBubble
-                  align="left"
-                  message={
-                    "I’m here to ask you for your help on my quest for the 4 elements..."
-                  }
-                  left={1}
-                />
-                <ChatBubble align="right" message={"Care to join?"} left={5} />
+                <div className="chat-area">
+                <div className="chat-area--bubbles">
+
+                <img src="images/chatBubble.svg" className="chats hide-mobile_" alt=""/>
+                <div className="hide-desktop" style={{display:'none'}}>
+                  <ChatBubble align="left" message={"Hola!"} left={2} />
+                    <ChatBubble
+                      align="right"
+                      message={
+                        "I’m Oddball, leader of the OddSquad and your spirit guide to all that is Ojo de Dios, mezcal and Mexico."
+                      }
+                      left={3}
+                    />
+                    <ChatBubble
+                      align="left"
+                      message={
+                        "I’m here to ask you for your help on my quest for the 4 elements..."
+                      }
+                      left={1}
+                    />
+                    <ChatBubble align="right" message={"Care to join?"} left={5} />
+                </div>
+                </div>
 
                 <img
                   src="images/graphicCharacter.png"
-                  className="absolute z-0 -bottom-9"
+                  className="bull"
                 />
+                </div>
               </div>
-            </div>
-            <img
+              </div>
+              <img
               src="images/bgShape1.png"
               id="shape1"
               className="absolute bgShape1 z-0 ml-40 "
             />
+            </div>
+            
             <div className="screen4 py-40 z-10 relative section">
               <div className="bg-gray-900 bg-opacity-0.3 border flex justify-center items-center border-white border-2   h-60  w-10/12 m-auto rounded-2xl h-32 relative">
                 <div className="ml-24 top-auto bottom-auto flex  items-center">

@@ -5,6 +5,7 @@
 /* @import url('https://cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css'); */
 
 
+
 :root {
   --bg1: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FBCB50 0%, #FB6F50 7.81%, #FB50A2 17.19%, #CF50FB 28.13%, #7C50FB 38.54%, #5061FB 50.52%, #509FFB 59.37%, #50D2FB 67.19%, #50FBF1 75%, #50FBA9 85.42%, #7CFB50 93.75%, #CAFB50 100%);
   --bg2: linear-gradient(180deg, #CA5E41 0%, #CA4B66 100%);
@@ -53,6 +54,7 @@ a {
 .chat{
   background: url("../public/images/chatBubble.png") no-repeat;
   background-size: 100% 100%;
+  filter: drop-shadow(0 0px 30px #fff);
 }
 
 /* 

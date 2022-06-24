@@ -16,6 +16,13 @@
 
 .section{
     @extend .clearfix;
+    @media (min-width:$desktop){
+        min-height:100vh;
+    }
+}
+
+.cursor-pointer{
+    cursor: pointer;
 }
 
 .hide-mobile{
@@ -28,4 +35,8 @@
     @media (max-width:$desktop){
         display:none !important;
     }
+}
+
+.d-inline-block{
+    display:inline-block !important;
 }
