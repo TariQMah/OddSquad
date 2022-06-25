@@ -14,30 +14,30 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { gsap, Power3 } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Button from "./components/Inputs/button";
-import SocialIcon from "./components/socialIcons";
-import ChatBubble from "./components/chatBubble";
+import Button from "../components/Inputs/button";
+import SocialIcon from "../components/socialIcons";
+import ChatBubble from "../components/chatBubble";
 import Slider from "react-slick";
 
-import Header from "./components/header";
-import Footer from "./components/footer";
-import gsapActions from "./hooks/gsapActions";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import gsapActions from "../hooks/gsapActions";
 import { useInView } from "react-intersection-observer";
-import Newake from "./components/text/newake";
-import JosefinSans from "./components/text/josefinSans";
-import ProductCard from "./components/productCart";
-import Benefits from "./components/benefits";
-import SocialButton from "./components/socialButtons/twitter";
-import MobileTimelineComponent from "./components/timeline/mobile";
-import DesktopTimelineComponent from "./components/timeline/desktop";
+import Newake from "../components/text/newake";
+import JosefinSans from "../components/text/josefinSans";
+import ProductCard from "../components/productCart";
+import Benefits from "../components/benefits";
+import SocialButton from "../components/socialButtons/twitter";
+import MobileTimelineComponent from "../components/timeline/mobile";
+import DesktopTimelineComponent from "../components/timeline/desktop";
 
-import PeopleCard from "./components/peopleCard";
-import TestimonialsCard from "./components/testimonialCard";
-import Accordion from "./components/accordion";
-import { accordionData } from "./utils/accordion";
+import PeopleCard from "../components/peopleCard";
+import TestimonialsCard from "../components/testimonialCard";
+import Accordion from "../components/accordion";
+import { accordionData } from "../utils/accordion";
 
 import Link from "next/link";
-import DesktopHeader from "./components/header/desktop";
+import DesktopHeader from "../components/header/desktop";
 import { Timeline, Tween } from "react-gsap";
 const Home: NextPage = () => {
   const boxRef = useRef<any>();

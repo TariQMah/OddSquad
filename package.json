@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "craco start",
-    "build": "craco build",
+    "build": "next build",
     "test": "craco test",
     "lint": "next lint"
   },
@@ -23,6 +23,7 @@
     "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.3.3",
     "react-locomotive-scroll": "^0.2.0",
+    "react-scripts": "^5.0.1",
     "react-scrollmagic": "^2.3.0",
     "react-slick": "^0.29.0",
     "scrollmagic-plugins": "^1.0.8",
