@@ -114,6 +114,7 @@ const Home: NextPage = () => {
       {
         breakpoint: 768,
         settings: {
+          dots: false,
           arrows: false,
           centerMode: true,
           centerPadding: "50px",
@@ -123,6 +124,7 @@ const Home: NextPage = () => {
       {
         breakpoint: 480,
         settings: {
+          dots: false,
           arrows: false,
           centerMode: true,
           centerPadding: "50px",
