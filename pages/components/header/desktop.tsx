@@ -3,7 +3,7 @@ import React from "react";
 import SocialIcon from "../../components/socialIcons";
 const DesktopHeader = () => {
   return (
-    <div className=" hidden  my-12 mx-6 md:grid grid-cols-12 gap-4 justify-between">
+    <div className=" hidden  mb-12 mx-6 md:grid grid-cols-12 gap-4 justify-between">
       <div className="logo col-span-2	">
         <img src="images/desktopLogo.png" />
       </div>

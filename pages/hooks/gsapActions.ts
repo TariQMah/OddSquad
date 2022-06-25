@@ -155,8 +155,24 @@ const gsapActions = ({ current }: any) => {
 
   const marquee = (marqueeText: any) => {};
 
+  // const stickyCard = () => {
+  //   const bgShape1 = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".screen5-1",
+  //       pin: true,
+  //       scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+  //     },
+  //   });
+
+  //   bgShape1.to(".mediaCardImage", {
+  //     top: 0,
+  //     duration: 2,
+  //     y: 0,
+  //   });
+  // };
   return {
     // bgTimeLine,
+    // stickyCard,
     graphicScroll,
     graphicScrollDesktop,
     shape2,

@@ -1,5 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { Controller, Scene } from "react-scrollmagic";
+
 import { AiFillTwitterCircle } from "react-icons/ai";
 
 import { BiDownArrowAlt } from "react-icons/bi";
@@ -36,14 +38,21 @@ import { accordionData } from "./utils/accordion";
 
 import Link from "next/link";
 import DesktopHeader from "./components/header/desktop";
+import { Timeline, Tween } from "react-gsap";
 const Home: NextPage = () => {
   const boxRef = useRef<any>();
   const menu = useRef<any>();
 
   const marqueeText = useRef<any>();
 
-  const { graphicScroll, graphicScrollDesktop, shape2, marquee, bottomShape } =
-    gsapActions(boxRef);
+  const {
+    graphicScroll,
+    // stickyCard,
+    graphicScrollDesktop,
+    shape2,
+    marquee,
+    bottomShape,
+  } = gsapActions(boxRef);
   gsap.registerPlugin(ScrollTrigger);
   const [showMore, setShowMore] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -139,7 +148,9 @@ const Home: NextPage = () => {
     };
   }, []);
 
-  useEffect(() => {}, [menu]);
+  // useEffect(() => {
+  //   stickyCard();
+  // }, [stickyCard]);
 
   const menuToggle = () => {
     setShowMenu(!showMenu);
@@ -304,6 +315,7 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
+
           <div className="screen2 section md:container md:mx-auto">
             <div className="w-full py-12  relative text-center">
               <img
@@ -479,7 +491,7 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="screen5 z-10 relative section">
+          <div className="screen5 md:hidden z-10 relative section">
             <img
               src="images/bgGraphic2.svg"
               id="shape2"
@@ -493,11 +505,7 @@ const Home: NextPage = () => {
             >
               NFT MEMBERS PASS
             </Newake>
-            <div
-              className=" w-full -z-10 overflow-hidden whitespace-nowrap "
-              id="no01"
-              ref={marqueeText}
-            >
+            <div className=" w-full -z-10 overflow-hidden whitespace-nowrap ">
               <Marquee className="marquee" speed={100}>
                 <JosefinSans
                   tag="h4"
@@ -545,7 +553,100 @@ const Home: NextPage = () => {
               <div className="clear-both"></div>
             </div>
           </div>
-          <div className="screen6 z-10 my-32  relative section">
+
+          <div className="screen5-1 hidden md:block md:flex relative section">
+            <div className="mediaCard w-6/12 mx-auto text-center flex justify-center items-start">
+              <img
+                src="images/card.png"
+                className="object-contain sticky  w-7/12 mediaCardImage"
+              />
+            </div>
+            <div className=" w-6/12   justify-center relative">
+              <div className="text-center w-12/12  flex justify-center relative">
+                <img
+                  src="images/logoText.png"
+                  className="absolute -z-10 -top-2"
+                />
+                <div className="text-center">
+                  <h3 className="text-white w-auto text-4xl font-Newake font-extrabold uppercase mt-28 z-10">
+                    Member&apos;s Pass
+                  </h3>
+
+                  <h2 className="text-white w-auto text-8xl	 font-Newake font-semibold mt-2 uppercase  z-10">
+                    3,333
+                  </h2>
+                  <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                    We’re opening the books to our coveted member’s club. Join
+                    the ODDSquad as an OG member to ensure you always get the
+                    best perks on offer.
+                  </p>
+
+                  <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                    Journey with us into our Odd World for In-Real-Life
+                    experiences, limited editions, exclusive parties and tones
+                    of Web3 goodies. The OddSquad Member’s Pass will be your
+                    ticket to ride.
+                  </p>
+                </div>
+                <div className="clear-both"></div>
+              </div>
+              <div className="text-center w-12/12 my-96 flex justify-center relative">
+                <div className="text-center">
+                  <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                    We’re opening the books to our coveted member’s club. Join
+                    the ODDSquad as an OG member to ensure you always get the
+                    best perks on offer.
+                  </p>
+
+                  <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                    Journey with us into our Odd World for In-Real-Life
+                    experiences, limited editions, exclusive parties and tones
+                    of Web3 goodies. The OddSquad Member’s Pass will be your
+                    ticket to ride.
+                  </p>
+                </div>
+                <div className="clear-both"></div>
+              </div>
+              <div className="text-center w-12/12 my-96 ">
+                <Newake
+                  tag="h4"
+                  media=""
+                  margin="mb-4"
+                  size="text-lg md:text-2xl"
+                  color="yellowColor"
+                >
+                  OG MEMBER BENEFITS
+                </Newake>
+                <div className="grid grid-cols-2">
+                  <Benefits>
+                    Free OddSquad <br /> profile pictures
+                  </Benefits>
+                  <Benefits>
+                    Exclusive invites to IRL events
+                    <br /> and VIP access
+                  </Benefits>
+                  <Benefits>
+                    Collaborations with top Mexican <br /> Artists, airdropped
+                    to holders
+                  </Benefits>
+                  <Benefits subHeading={"*legal stipulations apply"}>
+                    Free bottles of mezcal* <br /> and merch drops
+                  </Benefits>
+                  <Benefits>
+                    Access to one off Limited Edition
+                    <br /> bottles of Ojo de Dios Mezcal
+                  </Benefits>
+                  <Benefits>
+                    Be part of the first Metaverse
+                    <br /> community for mezcal lovers
+                  </Benefits>
+                </div>
+                <div className="clear-both"></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="screen6 md:hidden z-10 my-32  relative section">
             <Newake
               tag="h4"
               media=""
@@ -943,7 +1044,13 @@ const Home: NextPage = () => {
             <div className="w-full md:container md:mx-auto">
               <div className="accordion">
                 {accordionData.map(({ title, content }, index) => (
-                  <Accordion key={index} title={title} content={content} />
+                  <Tween
+                    key={index}
+                    from={{ opacity: 0, y: `${index}0` }}
+                    to={{ opacity: 100, y: `-${index}0` }}
+                  >
+                    <Accordion key={index} title={title} content={content} />
+                  </Tween>
                 ))}
               </div>
             </div>
