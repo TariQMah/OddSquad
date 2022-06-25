@@ -5,8 +5,8 @@
 
 @font-face {
   font-family: "newakedemo";
-  src: url("../fonts/newake/newake-demo-400-webfont.woff2") format("woff2"),
-    url("../fonts/newake/newake-demo-400-webfont.woff") format("woff");
+  src: url("/fonts/newake/newake-demo-400-webfont.woff2") format("woff2"),
+    url("/fonts/newake/newake-demo-400-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
