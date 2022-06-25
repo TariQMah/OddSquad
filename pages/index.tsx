@@ -1,5 +1,5 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Controller, Scene } from "react-scrollmagic";
 
 import { AiFillTwitterCircle } from "react-icons/ai";
@@ -54,8 +54,9 @@ const Home: NextPage = () => {
     bottomShape,
   } = gsapActions(boxRef);
   gsap.registerPlugin(ScrollTrigger);
-  const [showMore, setShowMore] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+
+  const [readMore, setReadMore] = useState(false);
 
   const { ref, inView, entry } = useInView({
     threshold: 0,
@@ -157,6 +158,18 @@ const Home: NextPage = () => {
   const menuToggle = () => {
     setShowMenu(!showMenu);
   };
+
+  const readMoreText = useMemo(() => {
+    return `Spirit Guides are intermediaries between spiritual and
+    human spheres provided by the gods for shaman
+    apprentices Spirit Guides are intermediaries between spiritual and
+    human spheres provided by the gods for shaman
+    apprentices Spirit Guides are intermediaries between spiritual and
+    human spheres provided by the gods for shaman
+    apprentices Spirit Guides are intermediaries between spiritual and
+    human spheres provided by the gods for shaman
+    apprentices`;
+  }, []);
   return (
     <div>
       <Head>
@@ -278,7 +291,7 @@ const Home: NextPage = () => {
               <img src="images/mainLogo.png" className="md:hidden" />
               <img
                 src="images/desktopCharacter.png"
-                className="hidden md:block"
+                className="hidden md:block w-8/12"
               />
             </div>
 
@@ -331,7 +344,7 @@ const Home: NextPage = () => {
 
               <Newake
                 tag="h4"
-                media="md:text-2xl"
+                media="md:text-1xl"
                 size="text-lg"
                 color="yellowColor"
               >
@@ -341,7 +354,7 @@ const Home: NextPage = () => {
               <Newake
                 tag="h2"
                 size="text-2xl"
-                media="md:text-7xl"
+                media="md:text-5xl"
                 color="white"
                 padding="px-2"
                 margin="mt-5 mb-20  md:mx-auto"
@@ -377,7 +390,7 @@ const Home: NextPage = () => {
                       align="left"
                       message={"Hola!"}
                       left={"left-12 md:left-15"}
-                      fontSize={"md:text-2xl"}
+                      fontSize={"md:text-1xl"}
                     />
                     <ChatBubble
                       align="right"
@@ -385,7 +398,7 @@ const Home: NextPage = () => {
                         "I’m Oddball, leader of the OddSquad and your spirit guide to all that is Ojo de Dios, mezcal and Mexico."
                       }
                       left={"left-0 md:left-28"}
-                      fontSize={"md:text-2xl"}
+                      fontSize={"md:text-1xl"}
                     />
                     <ChatBubble
                       align="left"
@@ -393,13 +406,13 @@ const Home: NextPage = () => {
                         "I’m here to ask you for your help on my quest for the 4 elements..."
                       }
                       left={"left-5 md:left-0"}
-                      fontSize={"md:text-2xl"}
+                      fontSize={"md:text-1xl"}
                     />
                     <ChatBubble
                       align="right"
                       message={"Care to join?"}
                       left={"left-0 md:left-28"}
-                      fontSize={"md:text-2xl"}
+                      fontSize={"md:text-1xl"}
                     />
 
                     <img
@@ -413,12 +426,12 @@ const Home: NextPage = () => {
             <img
               src="images/bgShape1.png"
               id="shape1"
-              className="absolute bgShape1 z-0 ml-40 md:mr-0 md:ml-auto md:hidden "
+              className="absolute bgShape1 z-0 ml-60 md:mr-0 md:ml-auto md:hidden "
             />
             <img
               src="images/desktopCloud.png"
               id="shapeDesktop1"
-              className="absolute bgShape1 z-0  md:block -right-96"
+              className="absolute bgShape1 z-0  md:block -right-96 -mr-36"
             />
             <div className="screen4 md:container md:mx-auto py-40 z-10 relative section">
               <div className="bg-gray-900 md:w-8/12 bg-opacity-0.3 border flex justify-center items-center border-white border-2   h-60 md:h-96  w-10/12 m-auto rounded-2xl h-32 relative">
@@ -439,10 +452,10 @@ const Home: NextPage = () => {
                 </div>
               </div>
 
-              <div className="bg-black bg-opacity-0.3 md:my-20 md:py-20  md:px-20    px-7 py-5  my-5 md:h-80  h-60  w-10/12 m-auto rounded-2xl  relative">
+              <div className="bg-black bg-opacity-0.3 md:my-20 md:py-20  md:px-20    px-7 py-5  my-5 md:h-auto   w-10/12 m-auto rounded-2xl  relative">
                 <div className="flex  flex-row flex-1 align-top">
                   <img src="images/book-open.svg" className="w-5 h-5" />
-                  <div className="h-5">
+                  <div className="">
                     <Newake
                       width="w-5/12"
                       margin="mt-0 ml-2"
@@ -463,17 +476,19 @@ const Home: NextPage = () => {
                       color="white"
                       weight="font-normal"
                     >
-                      Spirit Guides are intermediaries between spiritual and
-                      human spheres provided by the gods for shaman
-                      apprentices...
+                      {readMore
+                        ? readMoreText
+                        : readMoreText.length > 150
+                        ? readMoreText.substring(0, 150 - 3) + "..."
+                        : readMoreText}
                     </Newake>
 
                     <div className="mt-5">
                       <div
                         className="cursor-pointer p-0 m-0 ml-2  flex items-center  text-white"
-                        onClick={() => setShowMore(true)}
+                        onClick={() => setReadMore(!readMore)}
                       >
-                        <IoIosArrowDown />
+                        {readMore ? <IoIosArrowUp /> : <IoIosArrowDown />}
                         <JosefinSans
                           tag="h4"
                           color="white"
@@ -483,7 +498,7 @@ const Home: NextPage = () => {
                           textTransform="uppercase"
                           margin="m-0 ml-2"
                         >
-                          READ MORE
+                          {readMore ? "Read Less " : " READ MORE"}
                         </JosefinSans>
                       </div>
                     </div>
@@ -502,7 +517,7 @@ const Home: NextPage = () => {
             <Newake
               tag="h4"
               media=""
-              size="text-lg md:text-2xl"
+              size="text-lg md:text-1xl"
               color="yellowColor"
             >
               NFT MEMBERS PASS
@@ -557,7 +572,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen5-1 hidden md:block md:flex relative section">
-            <div className="mediaCard w-6/12 mx-auto text-center flex justify-center items-start">
+            <div className="mediaCard w-6/12 mx-auto mt-20 text-center flex justify-center items-start">
               <img
                 src="images/card.png"
                 className="object-contain sticky  w-7/12 mediaCardImage"
@@ -577,13 +592,13 @@ const Home: NextPage = () => {
                   <h2 className="text-white w-auto text-8xl	 font-Newake font-semibold mt-2 uppercase  z-10">
                     3,333
                   </h2>
-                  <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                  <p className="text-2xl my-6 font-Newake px-4 text-white text-center ">
                     We’re opening the books to our coveted member’s club. Join
                     the ODDSquad as an OG member to ensure you always get the
                     best perks on offer.
                   </p>
 
-                  <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                  <p className="text-2xl my-6 font-Newake px-4 text-white text-center ">
                     Journey with us into our Odd World for In-Real-Life
                     experiences, limited editions, exclusive parties and tones
                     of Web3 goodies. The OddSquad Member’s Pass will be your
@@ -594,13 +609,13 @@ const Home: NextPage = () => {
               </div>
               <div className="text-center w-12/12 my-96 flex justify-center relative">
                 <div className="text-center">
-                  <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                  <p className="text-2xl my-6 font-Newake px-4 text-white text-center ">
                     We’re opening the books to our coveted member’s club. Join
                     the ODDSquad as an OG member to ensure you always get the
                     best perks on offer.
                   </p>
 
-                  <p className="text-4xl my-6 font-Newake px-4 text-white text-center ">
+                  <p className="text-2xl my-6 font-Newake px-4 text-white text-center ">
                     Journey with us into our Odd World for In-Real-Life
                     experiences, limited editions, exclusive parties and tones
                     of Web3 goodies. The OddSquad Member’s Pass will be your
@@ -614,7 +629,7 @@ const Home: NextPage = () => {
                   tag="h4"
                   media=""
                   margin="mb-4"
-                  size="text-lg md:text-2xl"
+                  size="text-lg md:text-1xl"
                   color="yellowColor"
                 >
                   OG MEMBER BENEFITS
@@ -653,7 +668,7 @@ const Home: NextPage = () => {
               tag="h4"
               media=""
               margin="mb-4"
-              size="text-lg md:text-2xl"
+              size="text-lg md:text-1xl"
               color="yellowColor"
             >
               OG MEMBER BENEFITS
@@ -690,7 +705,7 @@ const Home: NextPage = () => {
                 tag="h4"
                 margin="mb-4 md:mb-0"
                 color="yellowColor"
-                size="text-lg md:text-2xl"
+                size="text-lg md:text-1xl"
               >
                 JOIN THE QUEST
               </Newake>
@@ -727,7 +742,7 @@ const Home: NextPage = () => {
             <Newake
               tag="h4"
               margin="mb-4"
-              size="text-lg md:text-2xl"
+              size="text-lg md:text-1xl"
               color="yellowColor"
             >
               ROADMAP
@@ -800,7 +815,7 @@ const Home: NextPage = () => {
                 <Newake
                   tag="h4"
                   margin="mb-4"
-                  size="text-lg md:text-2xl"
+                  size="text-lg md:text-1xl"
                   color="yellowColor"
                 >
                   COMMUNITY
@@ -843,7 +858,7 @@ const Home: NextPage = () => {
               margin="mb-4"
               textTransform="md:uppercase"
               color="yellowColor"
-              size="text-lg md:text-2xl"
+              size="text-lg md:text-1xl"
             >
               The Team
             </Newake>
@@ -851,7 +866,7 @@ const Home: NextPage = () => {
               <Newake
                 tag="h4"
                 color="white"
-                size="text-4xl md:text-7xl"
+                size="text-4xl md:text-5xl"
                 width="w-9/12"
                 className={"marqueeText"}
                 weight="font-extrabold	"
@@ -1039,7 +1054,7 @@ const Home: NextPage = () => {
               margin="mb-4"
               textTransform="md:uppercase"
               color="yellowColor"
-              size="text-lg md:text-2xl"
+              size="text-lg md:text-1xl"
             >
               FAQ&apos;s
             </Newake>

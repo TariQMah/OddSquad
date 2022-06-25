@@ -21,10 +21,10 @@ const Index = ({
       <div className="bg-gray-50 rounded-3xl mx-2 overflow-hidden">
         <img src={image} className="w-full" />
       </div>
-      <h4 className="text-white font-Newake text-center md:text-3xl my-2">
+      <h4 className="text-white font-Newake text-center md:text-2xl my-2">
         {name}
       </h4>
-      <h6 className="text-white font-Newake text-center mb-3 md:text-2xl uppercase text-yellowColor">
+      <h6 className="text-white font-Newake text-center mb-3 md:text-1xl uppercase text-yellowColor">
         {designation}
       </h6>
       <div className="flex justify-center">

@@ -46,7 +46,7 @@ a {
     );
 }
 .overlayPattern {
-  background: url("../public/images/rectangle_pattern.png");
+  background: url("/images/rectangle_pattern.png");
   position: relative;
   padding-top: 40px;
 }
@@ -119,7 +119,7 @@ a {
 }
 
 .timelineDesktop {
-  background: url("../public/images/timelineDesktop.svg") no-repeat;
+  background: url("/images/timelineDesktop.svg") no-repeat;
   height: 100%;
 }
 

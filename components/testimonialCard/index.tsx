@@ -31,10 +31,10 @@ const Index = ({
           src="images/avatar.png"
           className="rounded-full mt-8 mb-5 mx-auto"
         />
-        <h4 className="font-Newake text-white text-2xl md:text-3xl">
+        <h4 className="font-Newake text-white text-2xl md:text-2xl">
           Tom Youngs
         </h4>
-        <h5 className="text-yellowColor1 mb-5 md:1xl font-Newake text-center">
+        <h5 className="text-yellowColor mb-5 md:1xl font-Newake text-center">
           NFT EXPERT
         </h5>
         <div className="flex justify-center my-2">

@@ -10,7 +10,7 @@ const Index = ({ children, subHeading }: IProps) => {
     <div className="rounded-3xl my-1 mx-4 text-center py-3 px-5 bg-opacity-0.3 bg-white">
       <Newake
         tag="h2"
-        size="text-xl"
+        size="text-xl md:text-lg"
         textTransform="none"
         margin="m-0"
         color="white"
@@ -18,7 +18,7 @@ const Index = ({ children, subHeading }: IProps) => {
         {children}
         {subHeading && (
           <span className="opacity-60 block font-Newake font-light text-xs">
-            subHeading
+            {subHeading}
           </span>
         )}
       </Newake>
