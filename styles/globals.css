@@ -1,31 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-@import "~tailwindcss/base.css";
-@import "~tailwindcss/components.css";
-@import "~tailwindcss/utilities.css";
-
-:root {
-  --bg1: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    linear-gradient(
-      180deg,
-      #fbcb50 0%,
-      #fb6f50 7.81%,
-      #fb50a2 17.19%,
-      #cf50fb 28.13%,
-      #7c50fb 38.54%,
-      #5061fb 50.52%,
-      #509ffb 59.37%,
-      #50d2fb 67.19%,
-      #50fbf1 75%,
-      #50fba9 85.42%,
-      #7cfb50 93.75%,
-      #cafb50 100%
-    );
-  --bg2: linear-gradient(180deg, #ca5e41 0%, #ca4b66 100%);
-  --bg3: linear-gradient(180deg, #ca4c62 0%, #c84184 100%);
-  --bg4: linear-gradient(180deg, #c84184 0%, #ac41bc 100%);
-  --bg4: linear-gradient(180deg, #ad41bc 0%, #9441c4 100%);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: "newakedemo";
@@ -40,6 +16,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  font-family: "newakedemo";
 }
 
 a {
@@ -52,10 +29,6 @@ a {
 }
 
 .mainScrollScreen {
-  /* scroll-snap-type: y proximity;
-  overflow-y: scroll; */
-  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FBCB50 0%, #FB6F50 7.81%, #FB50A2 17.19%, #CF50FB 28.13%, #7C50FB 38.54%, #5061FB 50.52%, #509FFB 59.37%, #50D2FB 67.19%, #50FBF1 75%, #50FBA9 85.42%, #7CFB50 93.75%, #CAFB50 100%); */
-
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(
       180deg,
