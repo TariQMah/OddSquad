@@ -12,6 +12,7 @@ interface IProps {
   headingSize?: string;
   dateSize?: string;
   textSize?: string;
+  float?: string;
 }
 const Index = ({
   date,
@@ -25,10 +26,11 @@ const Index = ({
   headingSize = "text-lg",
   dateSize = "text-lg",
   textSize = "text-lg",
+  float = "float-right",
 }: IProps) => {
   return (
     <div
-      className={` ${width} top-0 ${margin} ${left} ${top} relative  float-right inline-block`}
+      className={` ${width} top-0 ${margin} ${left} ${top} relative ${float} inline-block`}
     >
       <Newake
         tag="h4"
