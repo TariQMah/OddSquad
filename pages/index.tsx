@@ -42,7 +42,7 @@ const Home: NextPage = () => {
 
   const marqueeText = useRef<any>();
 
-  const { bgTimeLine, graphicScroll, shape2, marquee, bottomShape } =
+  const { graphicScroll, graphicScrollDesktop, shape2, marquee, bottomShape } =
     gsapActions(boxRef);
   gsap.registerPlugin(ScrollTrigger);
   const [showMore, setShowMore] = useState(false);
@@ -55,11 +55,21 @@ const Home: NextPage = () => {
   const peopleSetting = {
     dots: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 2,
+    speed: 1000,
+    slidesToShow: 6,
+    slidesToScroll: 6,
     swipeToSlide: true,
     responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 8,
+        },
+      },
+
       {
         breakpoint: 768,
         settings: {
@@ -82,12 +92,15 @@ const Home: NextPage = () => {
   };
 
   const testimonialsSetting = {
-    dots: false,
+    dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    className: "slick2 my-20",
+    speed: 1000,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     swipeToSlide: true,
+    centerMode: true,
+    centerPadding: "50px",
     responsive: [
       {
         breakpoint: 768,
@@ -111,14 +124,16 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    bgTimeLine();
+    // bgTimeLine();
     graphicScroll();
+    graphicScrollDesktop();
     bottomShape();
     shape2();
     marquee(marqueeText);
     return () => {
-      bgTimeLine();
+      // bgTimeLine();
       graphicScroll();
+      graphicScrollDesktop();
       shape2();
       bottomShape();
     };
@@ -343,7 +358,7 @@ const Home: NextPage = () => {
                     src="images/desktopCharacterBlack.png"
                     className="w-auto h-auto object-contain hidden md:block"
                   />
-                  <div className="md:w-auto  w-full md:mr-96">
+                  <div className="md:w-auto md:relative  w-full md:mr-96">
                     <ChatBubble
                       align="left"
                       message={"Hola!"}
@@ -384,7 +399,12 @@ const Home: NextPage = () => {
             <img
               src="images/bgShape1.png"
               id="shape1"
-              className="absolute bgShape1 z-0 ml-40 md:mr-0 md:ml-auto "
+              className="absolute bgShape1 z-0 ml-40 md:mr-0 md:ml-auto md:hidden "
+            />
+            <img
+              src="images/desktopCloud.png"
+              id="shapeDesktop1"
+              className="absolute bgShape1 z-0  md:block -right-96"
             />
             <div className="screen4 md:container md:mx-auto py-40 z-10 relative section">
               <div className="bg-gray-900 md:w-8/12 bg-opacity-0.3 border flex justify-center items-center border-white border-2   h-60 md:h-96  w-10/12 m-auto rounded-2xl h-32 relative">
@@ -628,69 +648,111 @@ const Home: NextPage = () => {
                 </JosefinSans>
               </Marquee>
             </div>
-
-            <DesktopTimelineComponent />
+            <div className="container md:mx-auto hidden md:block">
+              <DesktopTimelineComponent />
+            </div>
             <MobileTimelineComponent />
           </div>
 
           <div className="screen9 z-10 relative section">
-            <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
-              COMMUNITY
-            </Newake>
-            <div
-              className="  w-full -z-10 overflow-hidden"
-              id="no01"
-              ref={marqueeText}
-            >
-              <Newake
-                tag="h4"
-                color="white"
-                size="text-5xl"
-                width="w-9/12"
-                className={"marqueeText"}
-                weight="font-extrabold	"
-                textTransform="uppercase"
-                margin="mb-3 mx-auto"
-                align="text-center"
-              >
-                JOIN US BY THE FIRE
+            <div className="md:hidden">
+              <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
+                COMMUNITY
               </Newake>
+              <div className="  w-full -z-10 overflow-hidden" id="no01">
+                <Newake
+                  tag="h4"
+                  color="white"
+                  size="text-5xl"
+                  width="w-9/12"
+                  className={"marqueeText"}
+                  weight="font-extrabold	"
+                  textTransform="uppercase"
+                  margin="mb-3 mx-auto"
+                  align="text-center"
+                >
+                  JOIN US BY THE FIRE
+                </Newake>
 
-              <SocialButton
-                bgColor="bg-purple-500"
-                text="JOIN OUR DISCORD"
-                icon={
-                  <BsDiscord
-                    size={"30px"}
-                    className="float-left"
-                    fill="white"
-                  />
-                }
+                <SocialButton
+                  bgColor="bg-purple-500"
+                  text="JOIN OUR DISCORD"
+                  icon={
+                    <BsDiscord
+                      size={"30px"}
+                      className="float-left"
+                      fill="white"
+                    />
+                  }
+                />
+              </div>
+              <img
+                src="images/graphic_bg3.png"
+                className="w-full mx-auto my-10"
               />
             </div>
-            <img
-              src="images/graphic_bg3.png"
-              className="w-full mx-auto my-10"
-            />
+            <div className="hidden   md:block">
+              <img src="images/fireimage.jpeg" className=" -z-10" />
+              <div className="z-40 top-0 w-full absolute pb-60 pt-32">
+                <Newake
+                  tag="h4"
+                  margin="mb-4"
+                  size="text-lg md:text-2xl"
+                  color="yellowColor"
+                >
+                  COMMUNITY
+                </Newake>
+                <div className="w-6/12 mx-auto">
+                  <Newake
+                    tag="h4"
+                    color="white"
+                    size="text-5xl"
+                    width="w-9/12"
+                    className={"marqueeText"}
+                    weight="font-extrabold	"
+                    textTransform="uppercase"
+                    margin="mb-3 mx-auto"
+                    align="text-center"
+                  >
+                    JOIN US BY THE FIRE
+                  </Newake>
+                  <div className="w-5/12 mx-auto ">
+                    <SocialButton
+                      bgColor="bg-purple-500"
+                      text="JOIN OUR DISCORD"
+                      icon={
+                        <BsDiscord
+                          size={"30px"}
+                          className="float-left"
+                          fill="white"
+                        />
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="screen10 z-10 relative section">
-            <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
+          <div className="screen10 z-10 md:my-40 relative section">
+            <Newake
+              tag="h4"
+              margin="mb-4"
+              textTransform="md:uppercase"
+              color="yellowColor"
+              size="text-lg md:text-2xl"
+            >
               The Team
             </Newake>
-            <div
-              className="  w-full -z-10 overflow-hidden"
-              id="no01"
-              ref={marqueeText}
-            >
+            <div className="  w-full md:w-6/12 md:mx-auto -z-10 overflow-hidden">
               <Newake
                 tag="h4"
                 color="white"
-                size="text-4xl"
+                size="text-4xl md:text-7xl"
                 width="w-9/12"
                 className={"marqueeText"}
                 weight="font-extrabold	"
-                textTransform="inherit"
+                textTransform="inherit md:uppercase"
                 margin="mb-3 mx-auto"
                 align="text-center"
               >
@@ -701,10 +763,10 @@ const Home: NextPage = () => {
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -713,7 +775,16 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation="FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -722,7 +793,16 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation="FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -731,7 +811,16 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation="FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -740,7 +829,7 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -749,21 +838,48 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/Michael.jpg"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/Michael.jpg"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation=" FOUNDER AND CMO"
+                  twitter="#"
+                  instagram="#"
+                  image="images/Michael.jpg"
                 />
               </div>
             </Slider>
           </div>
 
           <div className="screen11 z-10 relative section">
-            <Slider className="my-20" {...testimonialsSetting}>
+            <Slider {...testimonialsSetting}>
               <div>
                 <TestimonialsCard
                   name="Michael"
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -772,7 +888,7 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -781,7 +897,7 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -790,7 +906,7 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -799,7 +915,7 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
                 />
               </div>
               <div>
@@ -808,17 +924,28 @@ const Home: NextPage = () => {
                   designation=" FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
-                  image="images/peopelImage.png"
+                  image="images/Michael.jpg"
                 />
               </div>
             </Slider>
           </div>
 
-          <div className="screen12 z-10 my-20 relative section">
-            <div className="accordion">
-              {accordionData.map(({ title, content }, index) => (
-                <Accordion key={index} title={title} content={content} />
-              ))}
+          <div className="screen12 z-10 mt-48 mb-48 relative section">
+            <Newake
+              tag="h4"
+              margin="mb-4"
+              textTransform="md:uppercase"
+              color="yellowColor"
+              size="text-lg md:text-2xl"
+            >
+              FAQ&apos;s
+            </Newake>
+            <div className="w-full md:container md:mx-auto">
+              <div className="accordion">
+                {accordionData.map(({ title, content }, index) => (
+                  <Accordion key={index} title={title} content={content} />
+                ))}
+              </div>
             </div>
             <img
               src="images/bgGraphic2.svg"
@@ -828,59 +955,65 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen13 z-10 relative section">
-            <div className="footer mx-3 py-5 bg-black rounded-2xl">
-              <img src="images/footerLogo.svg" className="mx-auto my-2" />
+            <div className="footer mx-3 py-5 md:py-10 bg-black rounded-2xl">
+              <div className="w-full md:flex md:justify-between md:px-5">
+                <div className="md:w-3/12">
+                  <img src="images/footerLogo.svg" className="mx-auto my-2" />
+                </div>
+                <div className="text-center md:w-6/12 md:text-left">
+                  <Link href={"#"}>
+                    <h4 className="text-white uppercase text-sm font-JosefinSans">
+                      Our Story
+                    </h4>
+                  </Link>
+                  <Link href={"#"}>
+                    <h4 className="text-white uppercase text-sm font-JosefinSans">
+                      NFT MEMEBRS PASS
+                    </h4>
+                  </Link>
+                  <Link href={"#"}>
+                    <h4 className="text-white uppercase text-sm font-JosefinSans">
+                      ROADMAP
+                    </h4>
+                  </Link>
+                  <Link href={"#"}>
+                    <h4 className="text-white uppercase text-sm font-JosefinSans">
+                      community
+                    </h4>
+                  </Link>
+                  <Link href={"#"}>
+                    <h4 className="text-white uppercase text-sm font-JosefinSans">
+                      team
+                    </h4>
+                  </Link>
+                  <Link href={"#"}>
+                    <h4 className="text-white uppercase text-sm font-JosefinSans">
+                      FAQ
+                    </h4>
+                  </Link>
+                </div>
+                <div className="md:flex md:w-3/12 md:justify-end md:items-start">
+                  <div className="md:hidden">
+                    <Newake tag="h4" weight="font-light" size="text-lg">
+                      JOIN OUR COMMUNITY
+                    </Newake>
+                  </div>
 
-              <div className="text-center">
-                <Link href={"#"}>
-                  <h4 className="text-white uppercase text-sm font-JosefinSans">
-                    NFT MEMBERS PASS
-                  </h4>
-                </Link>
-                <Link href={"#"}>
-                  <h4 className="text-white uppercase text-sm font-JosefinSans">
-                    NFT MEMEBRS PASS
-                  </h4>
-                </Link>
-                <Link href={"#"}>
-                  <h4 className="text-white uppercase text-sm font-JosefinSans">
-                    ROADMAP
-                  </h4>
-                </Link>
-                <Link href={"#"}>
-                  <h4 className="text-white uppercase text-sm font-JosefinSans">
-                    community
-                  </h4>
-                </Link>
-                <Link href={"#"}>
-                  <h4 className="text-white uppercase text-sm font-JosefinSans">
-                    team
-                  </h4>
-                </Link>
-                <Link href={"#"}>
-                  <h4 className="text-white uppercase text-sm font-JosefinSans">
-                    FAQ
-                  </h4>
-                </Link>
-              </div>
-
-              <Newake tag="h4" weight="font-light" size="text-lg">
-                JOIN OUR COMMUNITY
-              </Newake>
-
-              <div className="flex  justify-center mt-3">
-                <SocialIcon>
-                  <img src="images/instagram_white.png" className="" />
-                </SocialIcon>
-                <SocialIcon>
-                  <img src="images/discord_white.png" />
-                </SocialIcon>
-                <SocialIcon>
-                  <img src="images/twitter_white.png" />
-                </SocialIcon>
-              </div>
-              <div className="my-6">
-                <Button text={"CONNECT WALLET"} />
+                  <div className="flex  justify-center mt-3">
+                    <SocialIcon>
+                      <img src="images/instagram_white.png" className="" />
+                    </SocialIcon>
+                    <SocialIcon>
+                      <img src="images/discord_white.png" />
+                    </SocialIcon>
+                    <SocialIcon>
+                      <img src="images/twitter_white.png" />
+                    </SocialIcon>
+                  </div>
+                  <div className="my-6 md:my-0">
+                    <Button text={"CONNECT WALLET"} />
+                  </div>
+                </div>
               </div>
               <p className="text-white flex mx-auto justify-center font-JosefinSans text-sm">
                 <FiArrowLeft className="mr-2" />

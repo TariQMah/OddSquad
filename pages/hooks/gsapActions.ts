@@ -43,30 +43,30 @@ const colorsEachScreen = [
 const gsapActions = ({ current }: any) => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const bgTimeLine = () => {
-    gsap.utils.toArray(".section").forEach(function (elem: any, i: number) {
-      const bg = gsap.timeline({
-        scrollTrigger: {
-          trigger: elem,
-          start: "bottom", // when the top of the trigger hits the top of the viewport
-          end: "+=500", // end after scrolling 500px beyond the start
-          scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        },
-      });
+  // const bgTimeLine = () => {
+  //   gsap.utils.toArray(".section").forEach(function (elem: any, i: number) {
+  //     const bg = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: elem,
+  //         start: "bottom", // when the top of the trigger hits the top of the viewport
+  //         end: "+=500", // end after scrolling 500px beyond the start
+  //         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+  //       },
+  //     });
 
-      bg.fromTo(
-        ".mainScrollScreen",
-        {
-          background: `${colorsEachScreen[0]}`,
-          duration: 1,
-        },
-        {
-          background: `${colorsEachScreen[i + 1]}`,
-          duration: 1,
-        }
-      );
-    });
-  };
+  //     bg.fromTo(
+  //       ".mainScrollScreen",
+  //       {
+  //         background: `${colorsEachScreen[0]}`,
+  //         duration: 1,
+  //       },
+  //       {
+  //         background: `${colorsEachScreen[i + 1]}`,
+  //         duration: 1,
+  //       }
+  //     );
+  //   });
+  // };
   const graphicScroll = () => {
     const bgShape1 = gsap.timeline({
       scrollTrigger: {
@@ -79,6 +79,21 @@ const gsapActions = ({ current }: any) => {
 
     bgShape1.to("#shape1", {
       top: 400,
+      duration: 2,
+    });
+  };
+  const graphicScrollDesktop = () => {
+    const bgShape1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".screen3",
+        start: "top top", // when the top of the trigger hits the top of the viewport
+        end: "+=500", // end after scrolling 500px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    });
+
+    bgShape1.to("#shapeDesktop1", {
+      top: 200,
       duration: 2,
     });
   };
@@ -141,8 +156,9 @@ const gsapActions = ({ current }: any) => {
   const marquee = (marqueeText: any) => {};
 
   return {
-    bgTimeLine,
+    // bgTimeLine,
     graphicScroll,
+    graphicScrollDesktop,
     shape2,
     marquee,
     bottomShape,

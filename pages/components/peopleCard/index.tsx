@@ -17,19 +17,23 @@ const Index = ({
   instagram = "#",
 }: IProps) => {
   return (
-    <div className="rounder overflow-hidden ">
-      <img src={image} className="my-5" />
-      <h4 className="text-white font-Newake text-center">{name}</h4>
-      <h6 className="text-white font-Newake text-center uppercase text-yellowColor">
+    <div className="rounder  overflow-hidden ">
+      <div className="bg-gray-50 rounded-3xl mx-2 overflow-hidden">
+        <img src={image} className="w-full" />
+      </div>
+      <h4 className="text-white font-Newake text-center md:text-3xl my-2">
+        {name}
+      </h4>
+      <h6 className="text-white font-Newake text-center mb-3 md:text-2xl uppercase text-yellowColor">
         {designation}
       </h6>
       <div className="flex justify-center">
-        <div className="bg-white mx-1 rounded-full h-10 w-10 flex justify-center items-center">
+        <div className="bg-white mx-1 rounded-full h-10 w-10 md:h-13 md:w-13 flex justify-center items-center">
           <Link href={twitter}>
             <FiTwitter />
           </Link>
         </div>
-        <div className="bg-white mx-1 rounded-full h-10 w-10 flex justify-center items-center">
+        <div className="bg-white mx-1 rounded-full h-10 w-10 md:h-13 md:w-13 flex justify-center items-center">
           <Link href={instagram}>
             <FiInstagram />
           </Link>

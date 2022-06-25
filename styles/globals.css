@@ -1,27 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg1: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FBCB50 0%, #FB6F50 7.81%, #FB50A2 17.19%, #CF50FB 28.13%, #7C50FB 38.54%, #5061FB 50.52%, #509FFB 59.37%, #50D2FB 67.19%, #50FBF1 75%, #50FBA9 85.42%, #7CFB50 93.75%, #CAFB50 100%);
-  --bg2: linear-gradient(180deg, #CA5E41 0%, #CA4B66 100%);
-  --bg3: linear-gradient(180deg, #CA4C62 0%, #C84184 100%);
-  --bg4: linear-gradient(180deg, #C84184 0%, #AC41BC 100%);
-  --bg4: linear-gradient(180deg, #AD41BC 0%, #9441C4 100%);
+  --bg1: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(
+      180deg,
+      #fbcb50 0%,
+      #fb6f50 7.81%,
+      #fb50a2 17.19%,
+      #cf50fb 28.13%,
+      #7c50fb 38.54%,
+      #5061fb 50.52%,
+      #509ffb 59.37%,
+      #50d2fb 67.19%,
+      #50fbf1 75%,
+      #50fba9 85.42%,
+      #7cfb50 93.75%,
+      #cafb50 100%
+    );
+  --bg2: linear-gradient(180deg, #ca5e41 0%, #ca4b66 100%);
+  --bg3: linear-gradient(180deg, #ca4c62 0%, #c84184 100%);
+  --bg4: linear-gradient(180deg, #c84184 0%, #ac41bc 100%);
+  --bg4: linear-gradient(180deg, #ad41bc 0%, #9441c4 100%);
 }
 
 @font-face {
-  font-family: 'newakedemo';
-  src: url('../public/fonts/newake/newake-demo-400-webfont.woff2') format('woff2'),
-       url('../public/fonts/newake/newake-demo-400-webfont.woff') format('woff');
+  font-family: "newakedemo";
+  src: url("../public/fonts/newake/newake-demo-400-webfont.woff2")
+      format("woff2"),
+    url("../public/fonts/newake/newake-demo-400-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-
-
 }
-
-
 
 html,
 body {
@@ -38,21 +50,33 @@ a {
   box-sizing: border-box;
 }
 
-.mainScrollScreen{
+.mainScrollScreen {
   /* scroll-snap-type: y proximity;
   overflow-y: scroll; */
   /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FBCB50 0%, #FB6F50 7.81%, #FB50A2 17.19%, #CF50FB 28.13%, #7C50FB 38.54%, #5061FB 50.52%, #509FFB 59.37%, #50D2FB 67.19%, #50FBF1 75%, #50FBA9 85.42%, #7CFB50 93.75%, #CAFB50 100%); */
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(
+      180deg,
+      #fbcb50 0%,
+      #fb6f50 7.81%,
+      #fb50a2 17.19%,
+      #cf50fb 28.13%,
+      #7c50fb 38.54%,
+      #5061fb 50.52%,
+      #509ffb 59.37%,
+      #50d2fb 67.19%,
+      #50fbf1 75%,
+      #50fba9 85.42%,
+      #7cfb50 93.75%,
+      #cafb50 100%
+    );
 }
-.overlayPattern{
-  background: url('../public/images/rectangle_pattern.png');
+.overlayPattern {
+  background: url("../public/images/rectangle_pattern.png");
   position: relative;
-
+  padding-top: 40px;
 }
-.chat{
-  background: url("../public/images/chatBubble.png") no-repeat;
-  background-size: 100% 100%;
-}
-
 /* 
 .bgShape1{
   background: url("../public/images/bgShape1.png") no-repeat;
@@ -60,46 +84,72 @@ a {
   background-position-x: 200px;
 } */
 
-.screen5{
+.screen5 {
   /* background: url("../public/images/bgGraphic2.svg") no-repeat; */
 }
 
-.slider{
+.slick {
   -webkit-transition: opacity 2000s ease-in-out;
-    -moz-transition: opacity 2000s ease-in-out;
-    -ms-transition: opacity 2000s ease-in-out;
-    -o-transition: opacity 2000s ease-in-out;
-     opacity: 1;
+  -moz-transition: opacity 2000s ease-in-out;
+  -ms-transition: opacity 2000s ease-in-out;
+  -o-transition: opacity 2000s ease-in-out;
+  opacity: 1;
 }
-.slick-slide:not(.slick-active) {
+.slick2 .slick-slide:not(.slick-current) {
   opacity: 0.4;
 }
+.slick2 .slick-dots {
+  bottom: -55px;
+}
+.slick2 .slick-dots li button:before {
+  color: white;
+}
+.slick2 .slick-dots li button {
+  color: white;
+}
+.slick2 .slick-dots li.slick-active button:before {
+  color: white;
+}
+/* 
+.slick-slide {
+  margin: 0 15px;
+}
 
-  .chat {
-    position: relative;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(4px);
-    border-radius: 40px;
-    text-align: center;
-  }
-  
-  .chat-bottom-left:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-   
-    border: 12px solid;
-    border-color: rgba(255, 255, 255, 0.3) transparent transparent transparent; 
-    left: -12px;
-    bottom: 2px;
-    border-radius: 12px 0px 19px 23px;
-    transform: rotateZ(314deg);
-  }
-  
+/* the parent */
+/* .slick-list {
+  margin: 0 -15px;
+}  */
 
-  .marquee .overlay::before, .marquee .overlay::after{
-    background: none;
+.chat {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  text-align: center;
+}
 
-  }
-  
+.chat .left-point {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 19px solid transparent;
+  border-top: 23px solid rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 4px;
+  left: -26px;
+  transform: rotate(90deg);
+}
+
+.marquee .overlay::before,
+.marquee .overlay::after {
+  background: none;
+}
+
+.timelineDesktop {
+  background: url("../public/images/timelineDesktop.svg") no-repeat;
+  height: 100%;
+}
+
+.fireBg {
+  background-position: bottom center;
+}
