@@ -32,7 +32,7 @@ const Index = ({
 }: IProps) => {
   return (
     <div
-      className={` ${width} top-0 ${margin} ${left} ${position} ${top} relative ${float} inline-block`}
+      className={` ${width} top-0 ${margin} ${left} ${position} ${top} ${float} `}
     >
       <Newake
         tag="h4"
@@ -59,7 +59,7 @@ const Index = ({
         {icon ? (
           <img src="images/greenCheck.svg" className="w-8" />
         ) : (
-          <img src="images/greenCheck.svg" className="w-8" />
+          <img src="images/settingIcon.png" className="w-8" />
         )}
       </div>
 

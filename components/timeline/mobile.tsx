@@ -27,7 +27,7 @@ const MobileTimeLine = () => {
           title="Ojo de Dios Mezcal launches"
           date="JUNE 2020"
           icon={false}
-          margin="mt-11"
+          margin="mt-16"
           width="w-60"
         />
         <TimelineComponent

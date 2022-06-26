@@ -10,13 +10,12 @@ module.exports = {
   theme: {
     colors: { ...colors },
     extend: {
+      spacing: {
+        "5px": "5px",
+      },
       inset: {
         "1/2": "50%",
         full: "100%",
-        timeline2P: "50rem",
-        timeline3P: "34rem",
-        timeline4P: "50rem",
-        timeline5P: "50rem",
       },
       fontFamily: {
         Urbanist: ["Urbanist", "sans-serif"],
