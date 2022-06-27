@@ -272,8 +272,8 @@ const Home: NextPage = () => {
         className=" mx-auto overflow-hidden mainScrollScreen wrap "
         ref={boxRef}
       >
-        <div className="bg-black text-left p-2 hidden md:block">
-          <p className="text-white flex mx-auto  font-JosefinSans text-sm">
+        <div className="bg-black text-left px-7 py-4 hidden md:block">
+          <p className="text-white flex mx-auto  font-JosefinSans items-center text-[10px]">
             <FiArrowLeft className="mr-2" />
             VISIT OJODEDIOS.COM
           </p>
@@ -302,7 +302,7 @@ const Home: NextPage = () => {
 
             <img
               src="images/mountains.svg"
-              className="absolute -z-10 top-10 bottom-auto hidden md:block"
+              className="absolute z-10 top-10 bottom-auto hidden md:block"
             />
             <div className="md:hidden">
               <Newake tag="h4">MINT AVAILABLE Q3 2022</Newake>
@@ -324,11 +324,11 @@ const Home: NextPage = () => {
                 </SocialIcon>
               </div>
             </div>
-            <div className="hidden md:block mb-20">
+            {/* <div className="hidden md:block mb-20"> ARROW WILL REMOVE IN FINAL VERSION
               <div className="bg-opacity-70 bg-white w-12 h-12 rounded-full border border-white flex justify-center items-center mx-auto">
                 <BiDownArrowAlt className="h-6 w-6 text-white " />
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="screen2 section md:container md:mx-auto">
@@ -358,7 +358,7 @@ const Home: NextPage = () => {
                 color="white"
                 padding="px-2"
                 margin="mt-5 mb-20  md:mx-auto"
-                textTransform="uppercase"
+                textTransform="inherit"
                 width=" md:w-8/12"
               >
                 Ojo de Dios is the eye to the soul of Mexico, a MASTER award
@@ -462,7 +462,7 @@ const Home: NextPage = () => {
                       align="text-left"
                       size="text-sm md:text-xl"
                       tag="h4"
-                      color="yellowColor1"
+                      color="[#f9af48]"
                     >
                       THE QUEST FOR THE 4 ELEMENTS
                     </Newake>

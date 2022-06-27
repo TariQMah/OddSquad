@@ -1,5 +1,3 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
   darkMode: false, // or 'media' or 'class'
   content: [
@@ -8,7 +6,6 @@ module.exports = {
   ],
 
   theme: {
-    colors: { ...colors },
     extend: {
       spacing: {
         "5px": "5px",
@@ -24,7 +21,7 @@ module.exports = {
       },
       colors: {
         yellowColor: "#FFE39D",
-        yellowColor1: "#FBB551",
+        xzy: "#FBB551",
         purpleColor1: "#EDDDF3",
         twitter: "#5CC3E4",
       },
@@ -37,10 +34,6 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {
-      backgroundColor: ["even"],
-    },
-  },
+
   plugins: [],
 };

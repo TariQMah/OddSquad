@@ -95,7 +95,7 @@ a {
 
 .chat {
   position: relative;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   border-bottom-left-radius: 0px;
   text-align: center;
@@ -106,7 +106,7 @@ a {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 19px solid transparent;
-  border-top: 23px solid rgba(255, 255, 255, 0.5);
+  border-top: 23px solid rgba(255, 255, 255, 0.3);
   position: absolute;
   bottom: 4px;
   left: -26px;

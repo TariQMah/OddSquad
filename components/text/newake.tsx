@@ -17,7 +17,7 @@ interface IProps {
 const Newake = ({
   tag: Wrapper = "div",
   children,
-  color,
+  color = "white",
   size = "text-lg",
   margin,
   align,
@@ -31,9 +31,9 @@ const Newake = ({
     <Wrapper
       className={`font-Newake ${width} ${media} ${size} ${
         margin || "mt-10"
-      } ${padding} ${align || "text-center"} ${textTransform}  text-${
-        color || "white"
-      }`}
+      } ${padding} ${
+        align || "text-center"
+      }   ${textTransform}  text-${color} `}
     >
       {children}
     </Wrapper>

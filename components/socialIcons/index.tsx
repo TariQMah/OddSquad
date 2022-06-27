@@ -2,11 +2,12 @@ import React from "react";
 interface IProps {
   children: React.ReactNode;
   size?: string;
+  margin?: string;
 }
-const Index = ({ children, size = "auto" }: IProps) => {
+const Index = ({ children, size = "auto", margin = "mx-1" }: IProps) => {
   return (
     <div
-      className={`mx-1 h-${size} w-${size} rounded-full flex justify-center items-center`}
+      className={`${margin} h-${size} w-${size} rounded-full flex justify-center items-center`}
     >
       {children}
     </div>
