@@ -39,11 +39,14 @@ import { accordionData } from "../utils/accordion";
 
 import DesktopHeader from "../components/header/desktop";
 import { Timeline, Tween } from "react-gsap";
+import Image from "next/image";
 const Home: NextPage = () => {
   const boxRef = useRef<any>();
   const menu = useRef<any>();
 
   const marqueeText = useRef<any>();
+  const videoRef = useRef<any>();
+  console.log("videoRef: ", videoRef.current);
 
   const {
     graphicScroll,
@@ -61,7 +64,15 @@ const Home: NextPage = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
   });
-
+  const toggleVideo = () => {
+    if (isPlaying) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
   const peopleSetting = {
     dots: false,
     infinite: true,
@@ -75,7 +86,7 @@ const Home: NextPage = () => {
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "30px",
           slidesToShow: 8,
         },
       },
@@ -94,7 +105,7 @@ const Home: NextPage = () => {
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: "10px",
+          centerPadding: "20px",
           slidesToShow: 2,
         },
       },
@@ -182,7 +193,13 @@ const Home: NextPage = () => {
           className="menu fixed z-50 w-full overflow-hidden bg-black opacity-90 backdrop-blur-md	 h-full"
           ref={menu}
         >
-          <div className="h-full my-36">
+          <div className="h-full my-12">
+            <img
+              src={"images/logoMobileMenu.png"}
+              className="mx-auto object-contain mb-20"
+              width={120}
+              height={120}
+            />
             <Link href={"#"}>
               <JosefinSans
                 tag="h2"
@@ -191,7 +208,7 @@ const Home: NextPage = () => {
                 margin="mt-1"
                 padding="mt-1"
               >
-                NFT MEMBERS PASS
+                Our Story
               </JosefinSans>
             </Link>
             <Link href={"#"}>
@@ -313,7 +330,7 @@ const Home: NextPage = () => {
               </Newake>
 
               <div className="flex justify-center mt-3">
-                <SocialIcon>
+                <SocialIcon link="https://www.instagram.com/ojodedios/">
                   <img src="images/instagram_white.png" className="" />
                 </SocialIcon>
                 <SocialIcon>
@@ -346,7 +363,7 @@ const Home: NextPage = () => {
                 tag="h4"
                 media="md:text-1xl"
                 size="text-lg"
-                color="yellowColor"
+                color="yellow-500"
               >
                 Our Story
               </Newake>
@@ -438,7 +455,7 @@ const Home: NextPage = () => {
                 {!isPlaying && (
                   <div
                     className="ml-24 cursor-pointer top-auto bottom-auto flex absolute  items-center"
-                    onClick={() => setIsPlaying(true)}
+                    onClick={() => toggleVideo()}
                   >
                     <div className="icon">
                       <img src="images/playButton.svg" className="" />
@@ -459,8 +476,8 @@ const Home: NextPage = () => {
                 <video
                   width="100%"
                   height={"500"}
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  controls
+                  onClick={() => toggleVideo()}
+                  ref={videoRef}
                 >
                   <source src="/images/video.mp4" type="video/mp4" />
                 </video>
@@ -526,7 +543,7 @@ const Home: NextPage = () => {
               tag="h4"
               media=""
               size="text-lg md:text-1xl"
-              color="yellowColor"
+              color="yellow-500"
             >
               NFT MEMBERS PASS
             </Newake>
@@ -638,7 +655,7 @@ const Home: NextPage = () => {
                   media=""
                   margin="mb-4"
                   size="text-lg md:text-1xl"
-                  color="yellowColor"
+                  color="yellow-500"
                 >
                   OG MEMBER BENEFITS
                 </Newake>
@@ -673,7 +690,7 @@ const Home: NextPage = () => {
               media=""
               margin="mb-4"
               size="text-lg md:text-1xl"
-              color="yellowColor"
+              color="yellow-500"
             >
               OG MEMBER BENEFITS
             </Newake>
@@ -708,7 +725,7 @@ const Home: NextPage = () => {
               <Newake
                 tag="h4"
                 margin="mb-4 md:mb-0"
-                color="yellowColor"
+                color="yellow-500"
                 size="text-lg md:text-1xl"
               >
                 JOIN THE QUEST
@@ -747,7 +764,7 @@ const Home: NextPage = () => {
               tag="h4"
               margin="mb-4"
               size="text-lg md:text-1xl"
-              color="yellowColor"
+              color="yellow-500"
             >
               ROADMAP
             </Newake>
@@ -778,7 +795,7 @@ const Home: NextPage = () => {
 
           <div className="screen9 z-10 relative section">
             <div className="md:hidden">
-              <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
+              <Newake tag="h4" margin="mb-4" size="text-lg" color="yellow-500">
                 COMMUNITY
               </Newake>
               <div className=" w-full -z-10 overflow-hidden" id="no01">
@@ -820,7 +837,7 @@ const Home: NextPage = () => {
                   tag="h4"
                   margin="mb-4"
                   size="text-lg md:text-1xl"
-                  color="yellowColor"
+                  color="yellow-500"
                 >
                   COMMUNITY
                 </Newake>
@@ -842,6 +859,7 @@ const Home: NextPage = () => {
                     <SocialButton
                       bgColor="bg-purple-500"
                       text="JOIN OUR DISCORD"
+                      link="#"
                       icon={
                         <BsDiscord
                           size={"30px"}
@@ -861,7 +879,7 @@ const Home: NextPage = () => {
               tag="h4"
               margin="mb-4"
               textTransform="md:uppercase"
-              color="yellowColor"
+              color="yellow-500"
               size="text-lg md:text-1xl"
             >
               The Team
@@ -881,7 +899,7 @@ const Home: NextPage = () => {
                 Crafted with love by our team of experts
               </Newake>
             </div>
-            <Slider className="my-10 ml-24" {...peopleSetting}>
+            <Slider className="my-10 md:ml-24" {...peopleSetting}>
               <div>
                 <PeopleCard
                   name="Michael"
@@ -1057,12 +1075,12 @@ const Home: NextPage = () => {
               tag="h4"
               margin="mb-4"
               textTransform="md:uppercase"
-              color="yellowColor"
+              color="yellow-500"
               size="text-lg md:text-1xl"
             >
               FAQ&apos;s
             </Newake>
-            <div className="w-6/12  md:mx-auto">
+            <div className="md:w-6/12 w-full  md:mx-auto">
               <div className="accordion">
                 {accordionData.map(({ title, content }, index) => (
                   <Tween
@@ -1085,10 +1103,10 @@ const Home: NextPage = () => {
           <div className="screen13 z-10  relative section">
             <div className="footer mx-3 py-5 mb-7 md:py-10 bg-black rounded-2xl">
               <div className="w-full md:flex md:justify-between md:px-5">
-                <div className="md:w-3/12 flex relative items-start">
+                <div className="md:w-3/12 flex md:relative items-start">
                   <img
                     src="images/footerLogo.svg"
-                    className="mx-auto absolute -top-6 my-2"
+                    className="mx-auto md:absolute md:-top-6 my-2"
                   />
                 </div>
                 <div className="text-center md:w-6/12 md:text-left">
@@ -1131,10 +1149,10 @@ const Home: NextPage = () => {
                   </div>
 
                   <div className="flex  justify-center mt-3">
-                    <SocialIcon>
+                    <SocialIcon link="https://www.instagram.com/ojodedios/">
                       <img src="images/instagram_white.png" className="" />
                     </SocialIcon>
-                    <SocialIcon>
+                    <SocialIcon link="https://discord.com/invite/EnkXWmqc">
                       <img src="images/discord_white.png" />
                     </SocialIcon>
                     <SocialIcon>

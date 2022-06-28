@@ -10,7 +10,7 @@ const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
 
   return (
     <div
-      className={`head md:hidden z-50 flex fixed w-full top-5  ${
+      className={`head md:hidden z-20 flex fixed w-full top-5  ${
         showLogo ? "justify-between" : "justify-center"
       }`}
     >

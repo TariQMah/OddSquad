@@ -23,7 +23,7 @@ const Index = ({
       <h4 className="text-white font-Newake text-center  mb-0 md:text-2xl mt-2">
         {name}
       </h4>
-      <h6 className="text-white font-JosefinSans text-center mt-0  font-normal mb-3 md:text-1xl  text-yellowColor">
+      <h6 className="text-white font-JosefinSans text-center mt-0  font-normal mb-3 md:text-1xl  text-yellow-500">
         {designation}
       </h6>
       <div className="flex justify-center">

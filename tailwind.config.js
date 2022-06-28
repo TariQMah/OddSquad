@@ -22,7 +22,7 @@ module.exports = {
       colors: {
         yellowColor: "#FFE39D",
         xzy: "#FBB551",
-        purpleColor1: "#EDDDF3",
+        purpleColor: "#EDDDF3",
         twitter: "#5CC3E4",
       },
       fontSize: {

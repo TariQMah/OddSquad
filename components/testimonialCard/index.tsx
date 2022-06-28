@@ -34,7 +34,7 @@ const Index = ({
         <h4 className="font-Newake text-white text-2xl md:text-2xl">
           Tom Youngs
         </h4>
-        <h5 className="text-yellowColor mb-5 md:1xl font-Newake text-center">
+        <h5 className="text-yellow-500 mb-5 md:1xl font-Newake text-center">
           NFT EXPERT
         </h5>
         <div className="flex justify-center my-2">

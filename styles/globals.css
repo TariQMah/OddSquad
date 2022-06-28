@@ -112,7 +112,14 @@ a {
   bottom: -10px;
   left: -16px;
   transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
   border-radius: 120px 10px 10px 5px;
+}
+
+@supports (-webkit-transform: rotate(360deg)) {
+  .chat .left-point {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 .marquee .overlay::before,
