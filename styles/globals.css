@@ -96,7 +96,7 @@ a {
 .chat {
   position: relative;
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
+  border-radius: 30px;
   border-bottom-left-radius: 0px;
   text-align: center;
 }
@@ -104,13 +104,15 @@ a {
 .chat .left-point {
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 19px solid transparent;
-  border-top: 23px solid rgba(255, 255, 255, 0.3);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 10px solid transparent;
   position: absolute;
-  bottom: 4px;
-  left: -26px;
-  transform: rotate(90deg);
+  bottom: -10px;
+  left: -16px;
+  transform: rotate(360deg);
+  border-radius: 120px 10px 10px 5px;
 }
 
 .marquee .overlay::before,

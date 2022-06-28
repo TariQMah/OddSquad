@@ -8,10 +8,10 @@ interface IProps {
 const Twitter = ({ bgColor = "bg-twitter", text, icon }: IProps) => {
   return (
     <div
-      className={`${bgColor} mx-10 text-white text-center  items-center flex flex-row px-5 py-3 rounded-full p-1`}
+      className={`${bgColor} mx-10 text-white text-center  items-center flex flex-row px-5 justify-between py-3 rounded-full p-1`}
     >
       {icon}
-      <p className="w-full font-JosefinSans uppercase  leading-6	p-0 m-0 text-center">
+      <p className="w-full font-JosefinSans uppercase  leading-6	px-5 m-0 text-center">
         {text}
       </p>
     </div>

@@ -456,16 +456,9 @@ const Home: NextPage = () => {
                 <div className="flex  flex-row flex-1 align-top">
                   <img src="images/book-open.svg" className="w-5 h-5" />
                   <div className="">
-                    <Newake
-                      width="w-5/12"
-                      margin="mt-0 ml-2"
-                      align="text-left"
-                      size="text-sm md:text-xl"
-                      tag="h4"
-                      color="[#f9af48]"
-                    >
+                    <h4 className="w-5/12 mt-0 ml-2 text-left text-sm md:text-xl text-yellow-500">
                       THE QUEST FOR THE 4 ELEMENTS
-                    </Newake>
+                    </h4>
 
                     <Newake
                       width="w-12/12"
@@ -474,6 +467,7 @@ const Home: NextPage = () => {
                       size="text-sm md:text-3xl"
                       tag="h4"
                       color="white"
+                      textTransform="inherit"
                       weight="font-normal"
                     >
                       {readMore
@@ -572,17 +566,17 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen5-1 hidden md:block md:flex relative section">
-            <div className="mediaCard w-6/12 mx-auto mt-20 text-center flex justify-center items-start">
+            <div className="mediaCard w-6/12 mx-auto mt-10 text-center flex justify-center items-start">
               <img
-                src="images/card.png"
+                src="images/cardNew.png"
                 className="object-contain sticky  w-7/12 mediaCardImage"
               />
             </div>
             <div className=" w-6/12   justify-center relative">
-              <div className="text-center w-12/12  flex justify-center relative">
+              <div className="text-center w-10/12  flex justify-center relative">
                 <img
                   src="images/logoText.png"
-                  className="absolute -z-10 -top-2"
+                  className="absolute z-10 -top-2"
                 />
                 <div className="text-center">
                   <h3 className="text-white w-auto text-4xl font-Newake font-extrabold uppercase mt-28 z-10">
@@ -607,7 +601,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="clear-both"></div>
               </div>
-              <div className="text-center w-12/12 my-96 flex justify-center relative">
+              <div className="text-center w-10/12 my-96 flex justify-center relative">
                 <div className="text-center">
                   <p className="text-2xl my-6 font-Newake px-4 text-white text-center ">
                     We’re opening the books to our coveted member’s club. Join
@@ -624,7 +618,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="clear-both"></div>
               </div>
-              <div className="text-center w-12/12 my-96 ">
+              <div className="text-center w-10/12 my-96 ">
                 <Newake
                   tag="h4"
                   media=""
@@ -635,27 +629,23 @@ const Home: NextPage = () => {
                   OG MEMBER BENEFITS
                 </Newake>
                 <div className="grid grid-cols-2">
+                  <Benefits>Free OddSquad profile pictures</Benefits>
                   <Benefits>
-                    Free OddSquad <br /> profile pictures
+                    Exclusive invites to IRL events and VIP access
                   </Benefits>
                   <Benefits>
-                    Exclusive invites to IRL events
-                    <br /> and VIP access
-                  </Benefits>
-                  <Benefits>
-                    Collaborations with top Mexican <br /> Artists, airdropped
-                    to holders
+                    Collaborations with top Mexican Artists, airdropped to
+                    holders
                   </Benefits>
                   <Benefits subHeading={"*legal stipulations apply"}>
-                    Free bottles of mezcal* <br /> and merch drops
+                    Free bottles of mezcal* and merch drops
                   </Benefits>
                   <Benefits>
-                    Access to one off Limited Edition
-                    <br /> bottles of Ojo de Dios Mezcal
+                    Access to one off Limited Edition bottles of Ojo de Dios
+                    Mezcal
                   </Benefits>
                   <Benefits>
-                    Be part of the first Metaverse
-                    <br /> community for mezcal lovers
+                    Be part of the first Metaverse community for mezcal lovers
                   </Benefits>
                 </div>
                 <div className="clear-both"></div>
@@ -699,7 +689,7 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="screen7 z-10   my-32 relative md:flex section">
+          <div className="screen7 z-10 my-32 relative md:flex section">
             <div className="w-full md:flex md:justify-center md:flex-col md:w-6/12 ">
               <Newake
                 tag="h4"
@@ -710,10 +700,10 @@ const Home: NextPage = () => {
                 JOIN THE QUEST
               </Newake>
               <div className="flex justify-between md:align-top md:justify-start   align-middle mt-10 md:mt-0  flex-col h-3/5">
-                <p className="text-4xl my-6 font-Newake px-4 md:mx-auto  text-white text-center md:w-6/12  ">
+                <p className="text-4xl my-6 font-Newake px-4 md:mx-auto  text-white text-center md:w-7/12  ">
                   Follow us for a whitelist spot and join the whitelist spot
                 </p>
-                <div className=" md:mx-auto  m:w-6/12">
+                <div className=" md:mx-auto  m:w-8/12">
                   <SocialButton
                     text="Follow us on twitter"
                     icon={
@@ -733,7 +723,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="md:block hidden md:w-6/12">
+            <div className="md:block hidden md:w-6/12 md:mr-20">
               <img src="images/keyArt_Cafe.png" />
             </div>
           </div>
@@ -777,7 +767,7 @@ const Home: NextPage = () => {
               <Newake tag="h4" margin="mb-4" size="text-lg" color="yellowColor">
                 COMMUNITY
               </Newake>
-              <div className="  w-full -z-10 overflow-hidden" id="no01">
+              <div className=" w-full -z-10 overflow-hidden" id="no01">
                 <Newake
                   tag="h4"
                   color="white"
@@ -834,7 +824,7 @@ const Home: NextPage = () => {
                   >
                     JOIN US BY THE FIRE
                   </Newake>
-                  <div className="w-5/12 mx-auto ">
+                  <div className="w-6/12 mx-auto ">
                     <SocialButton
                       bgColor="bg-purple-500"
                       text="JOIN OUR DISCORD"
@@ -877,11 +867,11 @@ const Home: NextPage = () => {
                 Crafted with love by our team of experts
               </Newake>
             </div>
-            <Slider className="my-10" {...peopleSetting}>
+            <Slider className="my-10 ml-24" {...peopleSetting}>
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation="FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -890,25 +880,7 @@ const Home: NextPage = () => {
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
-                  twitter="#"
-                  instagram="#"
-                  image="images/Michael.jpg"
-                />
-              </div>
-              <div>
-                <PeopleCard
-                  name="Michael"
-                  designation="FOUNDER AND CMO"
-                  twitter="#"
-                  instagram="#"
-                  image="images/Michael.jpg"
-                />
-              </div>
-              <div>
-                <PeopleCard
-                  name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -926,7 +898,7 @@ const Home: NextPage = () => {
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -944,7 +916,7 @@ const Home: NextPage = () => {
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -953,7 +925,7 @@ const Home: NextPage = () => {
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="FOUNDER AND CMO"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -962,7 +934,7 @@ const Home: NextPage = () => {
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -971,7 +943,7 @@ const Home: NextPage = () => {
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -980,7 +952,25 @@ const Home: NextPage = () => {
               <div>
                 <PeopleCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
+                  twitter="#"
+                  instagram="#"
+                  image="images/Michael.jpg"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation="Founder"
+                  twitter="#"
+                  instagram="#"
+                  image="images/Michael.jpg"
+                />
+              </div>
+              <div>
+                <PeopleCard
+                  name="Michael"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -994,7 +984,7 @@ const Home: NextPage = () => {
               <div>
                 <TestimonialsCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -1003,7 +993,7 @@ const Home: NextPage = () => {
               <div>
                 <TestimonialsCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -1012,7 +1002,7 @@ const Home: NextPage = () => {
               <div>
                 <TestimonialsCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -1021,7 +1011,7 @@ const Home: NextPage = () => {
               <div>
                 <TestimonialsCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -1030,7 +1020,7 @@ const Home: NextPage = () => {
               <div>
                 <TestimonialsCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -1039,7 +1029,7 @@ const Home: NextPage = () => {
               <div>
                 <TestimonialsCard
                   name="Michael"
-                  designation=" FOUNDER AND CMO"
+                  designation="Founder"
                   twitter="#"
                   instagram="#"
                   image="images/Michael.jpg"
@@ -1058,7 +1048,7 @@ const Home: NextPage = () => {
             >
               FAQ&apos;s
             </Newake>
-            <div className="w-full md:container md:mx-auto">
+            <div className="w-6/12  md:mx-auto">
               <div className="accordion">
                 {accordionData.map(({ title, content }, index) => (
                   <Tween
@@ -1078,11 +1068,14 @@ const Home: NextPage = () => {
             />
           </div>
 
-          <div className="screen13 z-10 relative section">
-            <div className="footer mx-3 py-5 md:py-10 bg-black rounded-2xl">
+          <div className="screen13 z-10  relative section">
+            <div className="footer mx-3 py-5 mb-7 md:py-10 bg-black rounded-2xl">
               <div className="w-full md:flex md:justify-between md:px-5">
-                <div className="md:w-3/12">
-                  <img src="images/footerLogo.svg" className="mx-auto my-2" />
+                <div className="md:w-3/12 flex relative items-start">
+                  <img
+                    src="images/footerLogo.svg"
+                    className="mx-auto absolute -top-6 my-2"
+                  />
                 </div>
                 <div className="text-center md:w-6/12 md:text-left">
                   <Link href={"#"}>
@@ -1139,7 +1132,7 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-white flex mx-auto justify-center font-JosefinSans text-sm">
+              <p className="text-white mt-12 px-10  flex mx-auto items-center justify-start font-JosefinSans text-xs">
                 <FiArrowLeft className="mr-2" />
                 VISIT OJODEDIOS.COM
               </p>

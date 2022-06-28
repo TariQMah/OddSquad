@@ -142,7 +142,7 @@ const gsapActions = ({ current }: any) => {
         left: 50, //-100,
         top: 0,
         duration: 1,
-        opacity: 0.6,
+        opacity: 1,
         zIndex: -1,
       },
       {
