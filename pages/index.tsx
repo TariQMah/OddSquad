@@ -1,7 +1,8 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Controller, Scene } from "react-scrollmagic";
-
+import ReactPlayer from "react-player";
 import { AiFillTwitterCircle } from "react-icons/ai";
 
 import { BiDownArrowAlt } from "react-icons/bi";
@@ -36,7 +37,6 @@ import TestimonialsCard from "../components/testimonialCard";
 import Accordion from "../components/accordion";
 import { accordionData } from "../utils/accordion";
 
-import Link from "next/link";
 import DesktopHeader from "../components/header/desktop";
 import { Timeline, Tween } from "react-gsap";
 const Home: NextPage = () => {
@@ -55,7 +55,7 @@ const Home: NextPage = () => {
   } = gsapActions(boxRef);
   gsap.registerPlugin(ScrollTrigger);
   const [showMenu, setShowMenu] = useState(false);
-
+  const [isPlaying, setIsPlaying] = useState(false);
   const [readMore, setReadMore] = useState(false);
 
   const { ref, inView, entry } = useInView({
@@ -434,22 +434,36 @@ const Home: NextPage = () => {
               className="absolute bgShape1 z-0  md:block -right-96 -mr-36"
             />
             <div className="screen4 md:container md:mx-auto py-40 z-10 relative section">
-              <div className="bg-gray-900 md:w-8/12 bg-opacity-0.3 border flex justify-center items-center border-white border-2   h-60 md:h-96  w-10/12 m-auto rounded-2xl h-32 relative">
-                <div className="ml-24 top-auto bottom-auto flex  items-center">
-                  <div className="icon">
-                    <img src="images/playButton.svg" className="" />
+              <div className="bg-gray-900  md:w-8/12 bg-opacity-0.3 border flex justify-center items-center border-white border-2  overflow-hidden min-h-60 md:h-auto  w-10/12 m-auto rounded-2xl h-32 relative">
+                {!isPlaying && (
+                  <div
+                    className="ml-24 cursor-pointer top-auto bottom-auto flex absolute  items-center"
+                    onClick={() => setIsPlaying(true)}
+                  >
+                    <div className="icon">
+                      <img src="images/playButton.svg" className="" />
+                    </div>
+
+                    <div className="text-left">
+                      <Newake
+                        margin="mt-0 ml-2"
+                        align="text-left"
+                        size="text-sm"
+                        tag="h4"
+                      >
+                        PLAY OUR FILM
+                      </Newake>
+                    </div>
                   </div>
-                  <div className="text-left">
-                    <Newake
-                      margin="mt-0 ml-2"
-                      align="text-left"
-                      size="text-sm"
-                      tag="h4"
-                    >
-                      PLAY OUR FILM
-                    </Newake>
-                  </div>
-                </div>
+                )}
+                <video
+                  width="100%"
+                  height={"500"}
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  controls
+                >
+                  <source src="/images/video.mp4" type="video/mp4" />
+                </video>
               </div>
 
               <div className="bg-black bg-opacity-0.3 md:my-20 md:py-20  md:px-20    px-7 py-5  my-5 md:h-auto   w-10/12 m-auto rounded-2xl  relative">
