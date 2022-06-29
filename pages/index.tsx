@@ -80,8 +80,7 @@ const Home: NextPage = () => {
     slidesToShow: 6,
     slidesToScroll: 6,
     swipeToSlide: true,
-    prevArrow: false,
-    nextArrow: false,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1200,
@@ -294,7 +293,7 @@ const Home: NextPage = () => {
         <div className="bg-black text-left px-7 py-4 hidden md:block">
           <p className="text-white flex mx-auto  font-JosefinSans items-center text-[10px]">
             <FiArrowLeft className="mr-2" />
-           <span className="mt-1">VISIT OJODEDIOS.COM</span>
+            <span className="mt-1">VISIT OJODEDIOS.COM</span>
           </p>
         </div>
 
