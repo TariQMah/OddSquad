@@ -223,7 +223,6 @@ const Home: NextPage = () => {
               onClick={() => menuToggle()}
               isDynamic={true}
               ignoreCancelEvents={false}
-              spyThrottle={500}
             >
               <img
                 src={"images/logoMobileMenu.png"}
@@ -244,7 +243,6 @@ const Home: NextPage = () => {
               onClick={() => menuToggle()}
               isDynamic={true}
               ignoreCancelEvents={false}
-              spyThrottle={500}
             >
               <JosefinSans
                 tag="h2"
@@ -268,7 +266,6 @@ const Home: NextPage = () => {
               isDynamic={true}
               onClick={() => menuToggle()}
               ignoreCancelEvents={false}
-              spyThrottle={500}
             >
               <JosefinSans
                 tag="h2"
@@ -292,7 +289,6 @@ const Home: NextPage = () => {
               isDynamic={true}
               onClick={() => menuToggle()}
               ignoreCancelEvents={false}
-              spyThrottle={500}
             >
               <JosefinSans
                 tag="h2"
@@ -316,7 +312,6 @@ const Home: NextPage = () => {
               isDynamic={true}
               onClick={() => menuToggle()}
               ignoreCancelEvents={false}
-              spyThrottle={500}
             >
               <JosefinSans
                 tag="h2"
@@ -340,7 +335,6 @@ const Home: NextPage = () => {
               isDynamic={true}
               onClick={() => menuToggle()}
               ignoreCancelEvents={false}
-              spyThrottle={500}
             >
               <JosefinSans
                 tag="h2"
@@ -364,7 +358,6 @@ const Home: NextPage = () => {
               isDynamic={true}
               onClick={() => menuToggle()}
               ignoreCancelEvents={false}
-              spyThrottle={500}
             >
               <JosefinSans
                 tag="h2"
