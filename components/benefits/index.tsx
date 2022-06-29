@@ -7,12 +7,13 @@ interface IProps {
 }
 const Index = ({ children, subHeading }: IProps) => {
   return (
-    <div className="rounded-3xl my-1 mx-4 text-center py-3 px-5 bg-opacity-0.3 bg-white">
+    <div className="rounded-3xl flex justify-center items-center my-1 mx-4 text-center py-3 min-h-[100px] px-5 bg-opacity-[0.2] bg-white">
       <Newake
         tag="h2"
-        size="text-xl md:text-lg"
+        size="text-lg md:text-lg"
         textTransform="none"
         margin="m-0"
+        letterSpace="tracking-normal"
         color="white"
       >
         {children}

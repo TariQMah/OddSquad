@@ -7,7 +7,7 @@ interface IProps {
 const Index = ({ showMenu, footerInView }: IProps) => {
   return (
     <div
-      className={`fixed w-full md:hidden drop-shadow-2xl z-50 	 bottom-0 ${
+      className={`fixed w-full md:hidden invisible drop-shadow-2xl z-50 	 bottom-0 ${
         showMenu || footerInView ? "hidden" : "block"
       }`}
     >

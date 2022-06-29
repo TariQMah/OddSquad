@@ -19,10 +19,10 @@ const Index = ({
       <div className="bg-gray-50 rounded-3xl mx-2 overflow-hidden">
         <img src={image} className="w-full" />
       </div>
-      <h4 className="text-white font-Newake text-center  mb-0 md:text-2xl mt-2">
+      <h4 className="text-white md:py-0 font-Newake text-center  mb-0 md:text-[38px] leading-none mt-8">
         {name}
       </h4>
-      <h6 className="text-white font-JosefinSans text-center mt-0  font-normal mb-3 md:text-1xl  text-yellow-400">
+      <h6 className="text-white md:py-0 font-JosefinSans text-center tracking-widest	font-bold mt-0 uppercase  mb-3 md:text-1xl  text-yellow-300">
         {designation}
       </h6>
       <div className="flex justify-center">

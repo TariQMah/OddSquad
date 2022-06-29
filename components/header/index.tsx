@@ -9,12 +9,12 @@ interface IProps {
 const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
   return (
     <div
-      className={`head md:hidden z-[999]  flex fixed w-full top-5  ${
+      className={`head md:hidden z-[999]  flex fixed w-full top-15  ${
         showLogo ? "justify-between" : "justify-center"
       }`}
     >
       {!showMenu && (
-        <div className="text-center   font-Urbanist ">
+        <div className="text-center flex-1  font-Urbanist ">
           <Link
             activeClass="active"
             to="home"
@@ -27,7 +27,7 @@ const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
             isDynamic={true}
             ignoreCancelEvents={false}
           >
-            {showLogo ? (
+            {!showLogo ? (
               <img src="/svg-img/logo.svg" className="ml-2" />
             ) : (
               <>

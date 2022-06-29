@@ -13,12 +13,14 @@ const Index = ({
   link = "#",
 }: IProps) => {
   return (
-    <Link href={link}>
-      <div
-        className={`${margin} h-${size} w-${size} rounded-full flex justify-center items-center`}
-      >
-        {children}
-      </div>
+    <Link href={link} passHref>
+      <a target="_blank" rel="noopener noreferrer">
+        <div
+          className={`${margin} h-${size} w-${size} cursor-pointer rounded-full flex justify-center items-center`}
+        >
+          {children}
+        </div>
+      </a>
     </Link>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import JosefinSans from "../text/josefinSans";
 import Newake from "../text/newake";
 interface IProps {
   date: string;
@@ -34,15 +35,16 @@ const Index = ({
     <div
       className={` ${width} top-0 ${margin} ${left} ${position} ${top} ${float} `}
     >
-      <Newake
+      <JosefinSans
         tag="h4"
         margin="m-0"
+        textTransform="normal-case"
         align="left"
         size={`text-lg ${dateSize}`}
         color="yellow-400"
       >
         {date}
-      </Newake>
+      </JosefinSans>
 
       <div className="flex mr-1 font-medium justify-between items-start">
         <Newake
@@ -50,7 +52,8 @@ const Index = ({
           margin="m-0"
           size={`text-timeLine ${headingSize}`}
           weight="font-normal"
-          width="w-10/12"
+          width="w-11/12"
+          textTransform="normal-case"
           align="left"
           color="white"
         >
@@ -63,7 +66,9 @@ const Index = ({
         )}
       </div>
 
-      <p className={`text-white text-sm  ${textSize}`}>{text}</p>
+      <p className={`text-white text-sm  font-JosefinSans ${textSize}`}>
+        {text}
+      </p>
     </div>
   );
 };

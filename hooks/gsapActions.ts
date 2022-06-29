@@ -153,7 +153,21 @@ const gsapActions = ({ current }: any) => {
     );
   };
 
-  const marquee = (marqueeText: any) => {};
+  const graphicScrollRight = () => {
+    const bgShape1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".screen10",
+        start: "top top", // when the top of the trigger hits the top of the viewport
+        end: "+=500", // end after scrolling 500px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+    });
+
+    bgShape1.to("#shapeBottomRight", {
+      top: -500,
+      duration: 2,
+    });
+  };
 
   // const stickyCard = () => {
   //   const bgShape1 = gsap.timeline({
@@ -176,7 +190,7 @@ const gsapActions = ({ current }: any) => {
     graphicScroll,
     graphicScrollDesktop,
     shape2,
-    marquee,
+    graphicScrollRight,
     bottomShape,
   };
 };

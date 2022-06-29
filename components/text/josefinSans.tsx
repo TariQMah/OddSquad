@@ -13,6 +13,7 @@ interface IProps {
   textTransform?: string;
   width?: string;
   opacity?: string;
+  letterSpace?: string;
 }
 const JosefinSans = ({
   tag: Wrapper = "div",
@@ -22,7 +23,8 @@ const JosefinSans = ({
   size,
   margin,
   align,
-  weight,
+  letterSpace = "tracking-widest",
+  weight = "font-[700]",
   padding,
   textTransform = "uppercase",
   width,
@@ -31,7 +33,7 @@ const JosefinSans = ({
   return (
     <Wrapper
       {...rest}
-      className={`font-JosefinSans   ${width} ${size} ${
+      className={`font-JosefinSans  ${letterSpace} ${width} ${size} ${
         margin || "mt-10"
       } ${padding} ${
         align || "text-center"

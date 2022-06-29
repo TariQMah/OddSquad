@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { FiTwitter, FiInstagram } from "react-icons/fi";
+import JosefinSans from "../text/josefinSans";
 
 interface IProps {
   name: string;
@@ -31,21 +32,28 @@ const Index = ({
           src="images/avatar.png"
           className="rounded-full mt-8 mb-5 mx-auto"
         />
-        <h4 className="font-Newake text-white text-2xl md:text-2xl">
+        <h4 className="font-Newake text-white text-3xl md:text-4xl">
           Tom Youngs
         </h4>
-        <h5 className="text-yellow-400 mb-5 md:1xl font-Newake text-center">
+        <JosefinSans
+          tag="h4"
+          margin="mb-5 md:1xl"
+          textTransform="normal-case"
+          align="left"
+          size={`text-lg`}
+          color="yellow-300"
+        >
           NFT EXPERT
-        </h5>
+        </JosefinSans>
         <div className="flex justify-center my-2">
-          <div className="bg-white mx-1 rounded-full md:h-12 md:w-12 h-7 w-7 flex justify-center items-center">
+          <div className="mx-1 rounded-full md:h-12 md:w-12 h-7 w-7 flex justify-center items-center">
             <Link href={twitter}>
-              <FiTwitter />
+              <img src="images/twitter_white.png" alt="twitter" />
             </Link>
           </div>
-          <div className="bg-white mx-1 rounded-full md:h-12 md:w-12 h-7 w-7 flex justify-center items-center">
+          <div className="mx-1 rounded-full md:h-12 md:w-12 h-7 w-7 flex justify-center items-center">
             <Link href={instagram}>
-              <FiInstagram />
+              <img src="images/instagram_white.png" alt="instagram" />
             </Link>
           </div>
         </div>
