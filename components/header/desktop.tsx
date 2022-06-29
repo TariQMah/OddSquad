@@ -22,7 +22,7 @@ const DesktopHeader = () => {
             to="ourStory"
             spy={true}
             smooth={true}
-            hashSpy={true}
+            hashSpy={false}
             offset={50}
             duration={500}
             delay={1000}
@@ -38,7 +38,7 @@ const DesktopHeader = () => {
             to="nftMemberPass"
             spy={true}
             smooth={true}
-            hashSpy={true}
+            hashSpy={false}
             offset={50}
             duration={500}
             delay={1000}
@@ -54,7 +54,7 @@ const DesktopHeader = () => {
             to="roadMap"
             spy={true}
             smooth={true}
-            hashSpy={true}
+            hashSpy={false}
             offset={50}
             duration={500}
             delay={1000}
@@ -70,7 +70,7 @@ const DesktopHeader = () => {
             to="community"
             spy={true}
             smooth={true}
-            hashSpy={true}
+            hashSpy={false}
             offset={50}
             duration={500}
             delay={1000}
@@ -86,7 +86,7 @@ const DesktopHeader = () => {
             to="team"
             spy={true}
             smooth={true}
-            hashSpy={true}
+            hashSpy={false}
             offset={50}
             duration={500}
             delay={1000}
@@ -102,7 +102,7 @@ const DesktopHeader = () => {
             to="faq"
             spy={true}
             smooth={true}
-            hashSpy={true}
+            hashSpy={false}
             offset={50}
             duration={500}
             delay={1000}
