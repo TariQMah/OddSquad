@@ -185,15 +185,19 @@ const Home: NextPage = () => {
   }, [showMenu]);
 
   const readMoreText = useMemo(() => {
-    return `Spirit Guides are intermediaries between spiritual and
-    human spheres provided by the gods for shaman
-    apprentices Spirit Guides are intermediaries between spiritual and
-    human spheres provided by the gods for shaman
-    apprentices Spirit Guides are intermediaries between spiritual and
-    human spheres provided by the gods for shaman
-    apprentices Spirit Guides are intermediaries between spiritual and
-    human spheres provided by the gods for shaman
-    apprentices`;
+    return `In the beginning Watacame*, tended to his harvest, in the dark fields, until one day the great deity Grandma Rain**, came down to earth, instructed him to build a raft and started the great flood.  Life and light was born into the world, but also gods and spirits were released to walk among us.  Over time a great unbalance fell upon this world and the spirit world.
+
+    Our hero Oddball, is a shaman, a spirit guide*** that lives between these two worlds..  He is our guide to our ODD World and all that is Mexico.  One day Oddball saw a vision in the fire, about this great cosmic unrest and Watacame spoke to him, ”To help your people and those in the material and spirit world, you must bring back balance to the cosmos, you must undertake a quest for the four elements****.  Only then will balance be restored.”  
+    
+    Join Oddball as he sets out on his first quest, to understand where it all started, EARTH.  Journey to Oaxaca, the rolling Espadin agave fields and into the mountains of San Luis Del Rio to discover the Earth spirit.
+    
+    *Watacame – In Huichol folk lore, Watacame is the first human to walk the earth, with his loyal dog Tziku Mayuri
+    
+    **Grandma Rain - There are many gods in Huichol lore, old and new, human and animal in form.  Grandma Rain is considered the highest of deities, the giver of life, mother nature
+    
+    ***Spirit Guide - Spirit Guides are intermediaries between spiritual and human spheres provided by the gods. The guide can appear in dreams or visions and are often half-human, half animal.. Shamans are considered para-normal in their powers and are an integral link between the Huichol people and the deities.
+    
+    **** Huichol Quest for the Four Elements – Huichol art and tradition is centered around the balance of the four elements (Earth, Fire, Water and Air)`;
   }, []);
   return (
     <div id="home">
