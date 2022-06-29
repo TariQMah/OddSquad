@@ -15,7 +15,7 @@ const DesktopHeader = () => {
       <div className="logo col-span-2	">
         <img src="images/desktopLogo.png" />
       </div>
-      <div className="flex col-span-7 justify-center items-center">
+      <div className="flex col-span-8 justify-center items-center">
         <h3 className="text-white mx-5  cursor-pointer font-JosefinSans font-medium text-md">
           <Link
             activeClass="active"
@@ -113,7 +113,7 @@ const DesktopHeader = () => {
           </Link>
         </h3>
       </div>
-      <div className="col-span-3 items-center justify-end flex">
+      <div className="col-span-2 items-center justify-end flex">
         <div className="flex items-center justify-end">
           <SocialIcon
             link="https://www.instagram.com/ojodedios/"

@@ -410,7 +410,7 @@ const Home: NextPage = () => {
               <img src="images/mainLogo.png" className="md:hidden" />
               <img
                 src="images/desktopCharacter.png"
-                className="hidden md:block w-8/12"
+                className="hidden md:block w-8/12  md:mr-0 -mr-20"
               />
             </div>
 
@@ -421,7 +421,7 @@ const Home: NextPage = () => {
 
             <img
               src="images/mountains.svg"
-              className="absolute z-10 top-10 bottom-auto hidden md:block"
+              className="absolute z-10 top-10 md:-top-8 bottom-auto hidden md:block"
             />
             <div className="md:hidden">
               <Newake size="text-sm" tag="h4" letterSpace="tracking-wider">
