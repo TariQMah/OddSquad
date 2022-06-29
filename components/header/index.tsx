@@ -10,13 +10,13 @@ const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
 
   return (
     <div
-      className={`head md:hidden z-20 flex fixed w-full top-5  ${
+      className={`head md:hidden z-50 flex fixed w-full top-5  ${
         showLogo ? "justify-between" : "justify-center"
       }`}
     >
       <div className="text-center   font-Urbanist ">
         {showLogo ? (
-          <img src="images/logoSticky.png" className="ml-2" />
+          <img src="/svg-img/logo.svg" className="ml-2" />
         ) : (
           <>
             <h2 className="text-sm text-white uppercase font-bold	">

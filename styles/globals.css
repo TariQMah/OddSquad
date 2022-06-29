@@ -135,3 +135,7 @@ a {
 .fireBg {
   background-position: bottom center;
 }
+
+button.slick-arrow {
+  display: none !important;
+}
