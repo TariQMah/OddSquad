@@ -179,10 +179,6 @@ const Home: NextPage = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   stickyCard();
-  // }, [stickyCard]);
-
   const menuToggle = useCallback(() => {
     setShowMenu(!showMenu);
   }, [showMenu]);
