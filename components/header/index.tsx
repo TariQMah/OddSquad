@@ -10,11 +10,11 @@ const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
   return (
     <div
       className={`head md:hidden z-[999]  flex fixed w-full top-5  ${
-        showLogo ? "justify-between" : "justify-center"
+        !showLogo ? "justify-between" : "justify-center"
       }`}
     >
       {!showMenu && (
-        <div className="text-center   font-Urbanist ">
+        <div className="text-center   font-Urbanist mt-6">
           <Link
             activeClass="active"
             to="home"
@@ -27,8 +27,8 @@ const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
             isDynamic={true}
             ignoreCancelEvents={false}
           >
-            {showLogo ? (
-              <img src="/svg-img/logo.svg" className="ml-2" />
+            {!showLogo ? (
+              <img src="/svg-img/logo.svg" className="ml-4" />
             ) : (
               <>
                 <h2 className="text-sm text-white uppercase font-bold	">
@@ -48,11 +48,11 @@ const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
         onClick={() => menuToggle()}
       >
         {showMenu ? (
-          <div className="text-1xl text-white">
+          <div className="text-1xl text-white mr-2 mt-6">
             <img src="images/cross.svg" className="text-white" />
           </div>
         ) : (
-          <img src="images/nave-burger-menu.png" />
+          <img className="mr-2 mt-6" src="images/nave-burger-menu.png" />
         )}
       </div>
     </div>
