@@ -14,20 +14,22 @@ const Index = ({ showLogo, showMenu, menuToggle }: IProps) => {
         showLogo ? "justify-between" : "justify-center"
       }`}
     >
-      <div className="text-center   font-Urbanist ">
-        {showLogo ? (
-          <img src="/svg-img/logo.svg" className="ml-2" />
-        ) : (
-          <>
-            <h2 className="text-sm text-white uppercase font-bold	">
-              Ojo De Dios MEZCAL
-            </h2>
-            <h4 className="text-xs  font-semibold text-white uppercase">
-              PRESENTS
-            </h4>
-          </>
-        )}
-      </div>
+      {!showMenu && (
+        <div className="text-center   font-Urbanist ">
+          {showLogo ? (
+            <img src="/svg-img/logo.svg" className="ml-2" />
+          ) : (
+            <>
+              <h2 className="text-sm text-white uppercase font-bold	">
+                Ojo De Dios MEZCAL
+              </h2>
+              <h4 className="text-xs  font-semibold text-white uppercase">
+                PRESENTS
+              </h4>
+            </>
+          )}
+        </div>
+      )}
 
       <div
         className="burgerMenu absolute right-0 ml-auto p-2"

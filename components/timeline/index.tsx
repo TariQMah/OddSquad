@@ -39,7 +39,7 @@ const Index = ({
         margin="m-0"
         align="left"
         size={`text-lg ${dateSize}`}
-        color="yellow-500"
+        color="yellow-400"
       >
         {date}
       </Newake>

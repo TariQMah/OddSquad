@@ -20,7 +20,7 @@ const Index = ({
       } my-10  m-auto  `}
     >
       <div
-        className={`inline-block ${left} max-w-xs absolute chat-bottom-left  h-auto chat`}
+        className={`inline-block ${left}  max-w-xs absolute chat-bottom-left  h-auto chat`}
       >
         <p
           className={`text-white break-words overflow-hidden	px-5 py-4 md:text-lg font-JosefinSans font-normal text-sm ${fontSize}`}
