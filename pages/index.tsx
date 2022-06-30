@@ -95,7 +95,7 @@ const Home: NextPage = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
     swipeToSlide: true,
-
+    draggable: true,
     arrows: false,
     responsive: [
       {
@@ -414,7 +414,7 @@ const Home: NextPage = () => {
               <img src="images/mainLogo.png" className="md:hidden" />
               <img
                 src="images/desktopCharacter.png"
-                className="hidden md:block w-8/12  md:mr-0 -mr-20"
+                className="hidden md:block w-8/12 -mr-20"
               />
             </div>
 
