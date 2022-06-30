@@ -22,9 +22,11 @@ const Index = ({
       <h4 className="text-white md:py-0 font-Newake text-center  mb-0 md:text-[38px] leading-none mt-8">
         {name}
       </h4>
-      <h6 className="text-white md:py-0 font-JosefinSans text-center tracking-widest	font-bold mt-0 uppercase  mb-3 md:text-1xl  text-yellow-300">
+
+      <h6 className="font-JosefinSansmd:py-0 font-JosefinSans text-center tracking-widest	font-bold mt-0 uppercase  mb-3 md:text-1xl yellowColor">
         {designation}
       </h6>
+
       <div className="flex justify-center">
         <div className=" mx-0  rounded-full h-10 w-10 md:h-13 md:w-13 flex justify-center items-center">
           <Link href={twitter}>

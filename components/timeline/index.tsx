@@ -35,16 +35,9 @@ const Index = ({
     <div
       className={` ${width} top-0 ${margin} ${left} ${position} ${top} ${float} `}
     >
-      <JosefinSans
-        tag="h4"
-        margin="m-0"
-        textTransform="normal-case"
-        align="left"
-        size={`text-lg ${dateSize}`}
-        color="yellow-400"
-      >
+      <h4 className="font-JosefinSans  normal-case mb-0 md:mb-0 text-left text-lg md:text-lg tracking-normal font-[700]  yellowColor">
         {date}
-      </JosefinSans>
+      </h4>
 
       <div className="flex mr-1 font-medium justify-between items-start">
         <Newake

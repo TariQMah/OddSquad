@@ -23,7 +23,7 @@ const Newake = ({
   margin,
   align,
   letterSpace = "tracking-widest",
-  weight,
+  weight = "font-normal",
   padding,
   textTransform = "uppercase",
   width = "full",

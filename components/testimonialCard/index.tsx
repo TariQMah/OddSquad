@@ -35,16 +35,10 @@ const Index = ({
         <h4 className="font-Newake text-white text-3xl md:text-4xl">
           Tom Youngs
         </h4>
-        <JosefinSans
-          tag="h4"
-          margin="mb-5 md:1xl"
-          textTransform="normal-case"
-          align="left"
-          size={`text-lg`}
-          color="yellow-300"
-        >
+
+        <h4 className="font-JosefinSans mb-12 md:mb-0 text-center text-lg md:text-lg tracking-wide font-[700] uppercase yellowColor">
           NFT EXPERT
-        </JosefinSans>
+        </h4>
         <div className="flex justify-center my-2">
           <div className="mx-1 rounded-full md:h-12 md:w-12 h-7 w-7 flex justify-center items-center">
             <Link href={twitter}>

@@ -185,17 +185,17 @@ const Home: NextPage = () => {
   }, [showMenu]);
 
   const readMoreText = useMemo(() => {
-    return `In the beginning Watacame*, tended to his harvest, in the dark fields, until one day the great deity Grandma Rain**, came down to earth, instructed him to build a raft and started the great flood.  Life and light was born into the world, but also gods and spirits were released to walk among us.  Over time a great unbalance fell upon this world and the spirit world.
+    return `In the beginning Watacame*, tended to his harvest, in the dark fields, until one day the great deity Grandma Rain**, came down to earth, instructed him to build a raft and started the great flood.  Life and light was born into the world, but also gods and spirits were released to walk among us.  Over time a great unbalance fell upon this world and the spirit world. <br><br>
 
-    Our hero Oddball, is a shaman, a spirit guide*** that lives between these two worlds..  He is our guide to our ODD World and all that is Mexico.  One day Oddball saw a vision in the fire, about this great cosmic unrest and Watacame spoke to him, ”To help your people and those in the material and spirit world, you must bring back balance to the cosmos, you must undertake a quest for the four elements****.  Only then will balance be restored.”  
+    Our hero Oddball, is a shaman, a spirit guide*** that lives between these two worlds..  He is our guide to our ODD World and all that is Mexico.  One day Oddball saw a vision in the fire, about this great cosmic unrest and Watacame spoke to him, ”To help your people and those in the material and spirit world, you must bring back balance to the cosmos, you must undertake a quest for the four elements****.  Only then will balance be restored.”  <br><br>
     
-    Join Oddball as he sets out on his first quest, to understand where it all started, EARTH.  Journey to Oaxaca, the rolling Espadin agave fields and into the mountains of San Luis Del Rio to discover the Earth spirit.
+    Join Oddball as he sets out on his first quest, to understand where it all started, EARTH.  Journey to Oaxaca, the rolling Espadin agave fields and into the mountains of San Luis Del Rio to discover the Earth spirit.<br><br>
     
-    *Watacame – In Huichol folk lore, Watacame is the first human to walk the earth, with his loyal dog Tziku Mayuri
+    *Watacame – In Huichol folk lore, Watacame is the first human to walk the earth, with his loyal dog Tziku Mayuri<br><br>
     
-    **Grandma Rain - There are many gods in Huichol lore, old and new, human and animal in form.  Grandma Rain is considered the highest of deities, the giver of life, mother nature
+    **Grandma Rain - There are many gods in Huichol lore, old and new, human and animal in form.  Grandma Rain is considered the highest of deities, the giver of life, mother nature<br><br>
     
-    ***Spirit Guide - Spirit Guides are intermediaries between spiritual and human spheres provided by the gods. The guide can appear in dreams or visions and are often half-human, half animal.. Shamans are considered para-normal in their powers and are an integral link between the Huichol people and the deities.
+    ***Spirit Guide - Spirit Guides are intermediaries between spiritual and human spheres provided by the gods. The guide can appear in dreams or visions and are often half-human, half animal.. Shamans are considered para-normal in their powers and are an integral link between the Huichol people and the deities.<br><br>
     
     **** Huichol Quest for the Four Elements – Huichol art and tradition is centered around the balance of the four elements (Earth, Fire, Water and Air)`;
   }, []);
@@ -234,11 +234,11 @@ const Home: NextPage = () => {
             </Link>
             <Link
               activeClass="active"
-              to="home"
+              to="ourStory"
               spy={false}
               smooth={true}
               hashSpy={false}
-              offset={-100}
+              offset={50}
               duration={500}
               delay={100}
               onClick={() => menuToggle()}
@@ -353,7 +353,7 @@ const Home: NextPage = () => {
               spy={false}
               smooth={true}
               hashSpy={false}
-              offset={-100}
+              offset={-50}
               duration={500}
               delay={100}
               isDynamic={true}
@@ -471,7 +471,7 @@ const Home: NextPage = () => {
           </div>
 
           <div
-            className="screen2 section py-28 md:py-0 md:container md:mx-auto"
+            className="screen2 section pt-28 pb-5 md:py-0 md:container md:mx-auto"
             id="ourStory"
           >
             <div className="w-full py-12  relative text-center">
@@ -484,9 +484,9 @@ const Home: NextPage = () => {
                 className="absolute right-0 top-0 hidden md:block md:top-30"
               />
 
-              <JosefinSans tag="h4" size="text-lg" color="yellow-400">
+              <h4 className="font-JosefinSans text-sm md:text-lg tracking-widest font-[700] uppercase yellowColor">
                 Our Story
-              </JosefinSans>
+              </h4>
 
               <Newake
                 tag="h2"
@@ -571,7 +571,7 @@ const Home: NextPage = () => {
               className="absolute bgShape1 z-0  md:block -right-96 -mr-36"
             />
             <div className="screen4 md:container md:mx-auto pt-40 pb-10 z-10 relative section">
-              <div className="bg-gray-900  md:w-8/12 bg-opacity-0.3 border flex justify-center items-center border-white border-2  overflow-hidden min-h-60 md:h-auto  w-10/12 m-auto rounded-2xl  relative">
+              <div className="bg-gray-900  md:w-8/12 bg-opacity-0.3  flex justify-center items-center border-white border-2  overflow-hidden min-h-60 md:h-auto  w-10/12 m-auto rounded-2xl  relative">
                 {!isPlaying && (
                   <div
                     className="ml-24 cursor-pointer top-auto bottom-auto flex absolute  items-center"
@@ -621,11 +621,17 @@ const Home: NextPage = () => {
                       textTransform="inherit"
                       weight="font-normal"
                     >
-                      {readMore
-                        ? readMoreText
-                        : readMoreText.length > 150
-                        ? readMoreText.substring(0, 150 - 3) + "..."
-                        : readMoreText}
+                      {readMore ? (
+                        <div
+                          dangerouslySetInnerHTML={{ __html: readMoreText }}
+                        />
+                      ) : readMoreText.length > 150 ? (
+                        readMoreText.substring(0, 150 - 3) + "..."
+                      ) : (
+                        <div
+                          dangerouslySetInnerHTML={{ __html: readMoreText }}
+                        />
+                      )}
                     </Newake>
 
                     <div className="mt-5">
@@ -634,17 +640,10 @@ const Home: NextPage = () => {
                         onClick={() => setReadMore(!readMore)}
                       >
                         {readMore ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                        <JosefinSans
-                          tag="h4"
-                          color="white"
-                          opacity="text-opacity-50"
-                          size="text-xs"
-                          weight="font-bold"
-                          textTransform="uppercase"
-                          margin="m-0 ml-2"
-                        >
+
+                        <h4 className="md:w-5/12 w-12/12 mt-0 ml-2 font-JosefinSans font-bold text-left text-xs md:text-xl text-[#FBB551]">
                           {readMore ? "Read Less " : " READ MORE"}
-                        </JosefinSans>
+                        </h4>
                       </div>
                     </div>
                   </div>
@@ -662,14 +661,10 @@ const Home: NextPage = () => {
               id="shape2"
               className="absolute z-0 -ml-40 "
             />
-            <JosefinSans
-              tag="h4"
-              letterSpace="tracking-normal"
-              size="text-sm md:text-1xl"
-              color="yellow-400"
-            >
+            <h4 className="font-JosefinSans text-center text-sm md:text-lg tracking-widest font-[700] uppercase yellowColor">
               NFT MEMBERS PASS
-            </JosefinSans>
+            </h4>
+
             <div className=" w-full -z-10 my-3 overflow-hidden whitespace-nowrap ">
               <Marquee className="marquee" speed={100}>
                 <Newake
@@ -758,14 +753,10 @@ const Home: NextPage = () => {
                 <div className="clear-both"></div>
               </div>
               <div className="text-center w-10/12 my-48 ">
-                <JosefinSans
-                  tag="h4"
-                  margin="mb-4"
-                  size="text-lg md:text-1xl"
-                  color="yellow-400"
-                >
+                <h4 className="font-JosefinSans text-center text-sm md:text-lg tracking-widest font-[700] uppercase yellowColor">
                   OG MEMBER BENEFITS
-                </JosefinSans>
+                </h4>
+
                 <div className="grid grid-cols-2">
                   <Benefits>Free OddSquad profile pictures</Benefits>
                   <Benefits>
@@ -792,15 +783,9 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen6 md:hidden z-10 md:my-32 mt:16 relative section">
-            <JosefinSans
-              tag="h4"
-              margin="mb-4"
-              size="text-sm md:text-1xl"
-              color="yellow-400"
-              letterSpace="tracking-normal"
-            >
+            <h4 className="font-JosefinSans mb-4 text-center text-sm md:text-lg tracking-normal font-[700] uppercase yellowColor">
               OG MEMBER BENEFITS
-            </JosefinSans>
+            </h4>
             <div className="">
               <Benefits>Free OddSquad profile pictures</Benefits>
               <Benefits>
@@ -823,14 +808,10 @@ const Home: NextPage = () => {
 
           <div className="screen7 z-10 my-32 relative md:flex section">
             <div className="w-full md:flex md:justify-center md:flex-col md:w-6/12 ">
-              <JosefinSans
-                tag="h4"
-                margin="mb-4 md:mb-0"
-                color="yellow-400"
-                size="text-lg md:text-1xl"
-              >
+              <h4 className="font-JosefinSans mb-4 md:mb-0 text-center text-sm md:text-lg tracking-normal font-[700] uppercase yellowColor">
                 JOIN THE QUEST
-              </JosefinSans>
+              </h4>
+
               <div className="flex justify-between md:align-top md:justify-start   align-middle  md:mt-0  flex-col h-3/5">
                 <p className="text-5xl md:mb-12  my-6 font-Newake px-4 md:mx-auto  text-white text-center md:w-9/12  ">
                   Follow us for a whitelist spot and join the whitelist spot
@@ -866,14 +847,9 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen8 z-10 relative section" id="roadMap">
-            <JosefinSans
-              tag="h4"
-              margin="mb-4"
-              size="text-sm md:text-1xl"
-              color="yellow-400"
-            >
+            <h4 className="font-JosefinSans mb-4 md:mb-0 text-center text-sm md:text-lg tracking-normal font-[700] uppercase yellowColor">
               ROADMAP
-            </JosefinSans>
+            </h4>
             <div
               className="marquee w-full -z-10 overflow-hidden whitespace-nowrap "
               id="no01"
@@ -902,14 +878,9 @@ const Home: NextPage = () => {
 
           <div className="screen9 z-10 my-28 relative section" id="community">
             <div className="md:hidden">
-              <Newake
-                tag="h4"
-                margin="mb-4"
-                size="text-sm md:text-1xl"
-                color="yellow-400"
-              >
+              <h4 className="font-JosefinSans mb-4 md:mb-0 text-center text-sm md:text-lg tracking-normal font-[700] uppercase yellowColor">
                 COMMUNITY
-              </Newake>
+              </h4>
               <div className=" w-full -z-10 overflow-hidden" id="no01">
                 <Newake
                   tag="h4"
@@ -942,14 +913,9 @@ const Home: NextPage = () => {
             <div className="hidden   md:block">
               <img src="images/fireimage.jpeg" className=" -z-10" />
               <div className="z-40 top-0 w-full absolute pb-60 pt-32">
-                <JosefinSans
-                  tag="h4"
-                  margin="mb-4"
-                  size="text-lg md:text-1xl"
-                  color="yellow-400"
-                >
+                <h4 className="font-JosefinSans mb-4 md:mb-0 text-center text-sm md:text-lg tracking-normal font-[700] uppercase yellowColor">
                   COMMUNITY
-                </JosefinSans>
+                </h4>
                 <div className="w-6/12 mx-auto">
                   <Newake
                     tag="h4"
@@ -984,16 +950,9 @@ const Home: NextPage = () => {
           </div>
 
           <div className="screen10 z-10 md:my-40 relative section" id="team">
-            <JosefinSans
-              tag="h4"
-              margin="mb-4"
-              textTransform="md:uppercase uppercase"
-              color="yellow-400"
-              weight="font-[700]"
-              size="text-sm md:text-1xl"
-            >
+            <h4 className="font-JosefinSans mb-4 md:mb-0 text-center text-sm md:text-lg tracking-wide font-[700] uppercase yellowColor">
               The Team
-            </JosefinSans>
+            </h4>
             <div className="  w-full md:w-6/12 md:mx-auto -z-10 overflow-hidden">
               <Newake
                 tag="h4"
@@ -1190,17 +1149,9 @@ const Home: NextPage = () => {
             className="screen12 z-10 md:mt-48 md:mb-48 mt-12 mb-28 relative section"
             id="faq"
           >
-            <JosefinSans
-              tag="h4"
-              letterSpace="tracking-widest"
-              margin="mb-12"
-              textTransform="md:uppercase"
-              weight="font-[700]"
-              color="yellow-400"
-              size="text-lg md:text-1xl"
-            >
-              FAQ<span className="text-lg md:text-xs">s</span>
-            </JosefinSans>
+            <h4 className="font-JosefinSans mb-12 md:mb-0 text-center text-lg md:text-lg tracking-wide font-[700] uppercase yellowColor">
+              FAQ<span className="text-sm md:text-xs">s</span>
+            </h4>
             <div className="md:w-6/12 w-full  md:mx-auto">
               <div className="accordion">
                 {accordionData.map(({ title, content }, index) => (

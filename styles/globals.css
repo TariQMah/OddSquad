@@ -156,3 +156,7 @@ a {
 button.slick-arrow {
   display: none !important;
 }
+
+.yellowColor {
+  color: #fbb551 !important;
+}
