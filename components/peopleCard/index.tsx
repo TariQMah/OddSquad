@@ -16,7 +16,7 @@ const Index = ({
 }: IProps) => {
   return (
     <div className="rounder  overflow-hidden ">
-      <div className="bg-gray-50 rounded-3xl mx-2 overflow-hidden">
+      <div className="bg-gray-50 h-[250px] rounded-3xl mx-2 overflow-hidden">
         <img src={image} className="w-full" />
       </div>
       <h4 className="text-white md:py-0 font-Newake text-center  mb-0 md:text-[38px] leading-none mt-8">

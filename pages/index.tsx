@@ -974,108 +974,110 @@ const Home: NextPage = () => {
                 <PeopleCard
                   name="Michael"
                   designation="Founder"
-                  twitter="#"
+                  twitter="https://twitter.com/the_Clokey"
                   instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/team5.png"
+                />
+              </div>
+
+              <div>
+                <PeopleCard
+                  name="Eduardo"
+                  designation="Founder"
+                  twitter="https://twitter.com/eduardoagaveuk"
+                  instagram="#"
+                  image="images/team2.png"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
+                  name="Sam"
                   designation="Founder"
-                  twitter="#"
+                  twitter="https://twitter.com/SamBElliott"
                   instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/team1.png"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
+                  name="Barry"
                   designation="Founder"
-                  twitter="#"
+                  twitter="https://twitter.com/MrADBHalstead"
                   instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/team3.png"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
-                  designation="Founder"
+                  name="Cynthia"
+                  designation="MASTER BLENDER"
                   twitter="#"
                   instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/team4.png"
+                />
+              </div>
+
+              <div>
+                <PeopleCard
+                  name="Raul"
+                  designation="Creative Director"
+                  twitter="https://twitter.com/thundervolve"
+                  instagram="#"
+                  image="images/peopelImage.png"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
-                  designation="Founder"
+                  name="Rafahu"
+                  designation="Artists Season One"
                   twitter="#"
-                  instagram="#"
-                  image="images/Michael.jpg"
+                  instagram="https://www.instagram.com/rafahu/"
+                  image="images/peopelImage.png"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
-                  designation="Founder"
-                  twitter="#"
+                  name="Tom"
+                  designation="Content King"
+                  twitter="https://twitter.com/TheTomYoungs"
                   instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/peopelImage.png"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
-                  designation="Founder"
-                  twitter="#"
+                  name="Rohail"
+                  designation="Blockchain Master"
+                  twitter="https://twitter.com/Diana_the_King"
                   instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/peopelImage.png"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
-                  designation="Founder"
-                  twitter="#"
+                  name="Dianna"
+                  designation="OG Rocks Comms"
+                  twitter="https://twitter.com/_Limitlesss_"
                   instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/team8.jpeg"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
-                  designation="Founder"
-                  twitter="#"
+                  name="Roman"
+                  designation="Roll Community Manager"
+                  twitter="https://twitter.com/evaseiko"
                   instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/team6.jpeg"
                 />
               </div>
               <div>
                 <PeopleCard
-                  name="Michael"
-                  designation="Founder"
+                  name="Eva"
+                  designation="Og Rocks Comms"
                   twitter="#"
                   instagram="#"
-                  image="images/Michael.jpg"
-                />
-              </div>
-              <div>
-                <PeopleCard
-                  name="Michael"
-                  designation="Founder"
-                  twitter="#"
-                  instagram="#"
-                  image="images/Michael.jpg"
-                />
-              </div>
-              <div>
-                <PeopleCard
-                  name="Michael"
-                  designation="Founder"
-                  twitter="#"
-                  instagram="#"
-                  image="images/Michael.jpg"
+                  image="images/team7.jpeg"
                 />
               </div>
             </Slider>
