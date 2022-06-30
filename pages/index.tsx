@@ -712,7 +712,7 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="screen5-1 hidden md:block md:flex relative section">
+          <div className="screen5-1 hidden  relative section">
             <div className="mediaCard w-6/12 mx-auto mt-10 text-center flex justify-center items-start">
               <img
                 src="images/cardNew.png"
