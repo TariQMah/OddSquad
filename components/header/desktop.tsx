@@ -18,6 +18,7 @@ const DesktopHeader = () => {
       <div className="flex col-span-8 justify-center items-center">
         <h3 className="text-white mx-5  cursor-pointer font-JosefinSans font-medium text-md">
           <Link
+            className="hover:text-black"
             activeClass="active"
             to="ourStory"
             spy={true}
@@ -34,6 +35,7 @@ const DesktopHeader = () => {
         </h3>
         <h3 className="text-white mx-5  cursor-pointer font-JosefinSans font-medium text-md">
           <Link
+            className="hover:text-black"
             activeClass="active"
             to="nftMemberPass"
             spy={true}
@@ -50,6 +52,7 @@ const DesktopHeader = () => {
         </h3>
         <h3 className="text-white mx-5  cursor-pointer font-JosefinSans font-medium text-md">
           <Link
+            className="hover:text-black"
             activeClass="active"
             to="roadMap"
             spy={true}
@@ -66,6 +69,7 @@ const DesktopHeader = () => {
         </h3>
         <h3 className="text-white mx-5  cursor-pointer font-JosefinSans font-medium text-md">
           <Link
+            className="hover:text-black"
             activeClass="active"
             to="community"
             spy={true}
@@ -82,6 +86,7 @@ const DesktopHeader = () => {
         </h3>
         <h3 className="text-white mx-5  cursor-pointer font-JosefinSans font-medium text-md">
           <Link
+            className="hover:text-black"
             activeClass="active"
             to="team"
             spy={true}
@@ -98,6 +103,7 @@ const DesktopHeader = () => {
         </h3>
         <h3 className="text-white mx-5  cursor-pointer  font-JosefinSans font-medium text-md">
           <Link
+            className="hover:text-black"
             activeClass="active "
             to="faq"
             spy={true}
@@ -127,7 +133,7 @@ const DesktopHeader = () => {
             size="8"
             margin="mx-1"
           >
-            <img src="images/discord_white.png" />
+            <img className="" src="images/discord_white.png" />
           </SocialIcon>
           <SocialIcon
             link="https://twitter.com/oddsquadnft"

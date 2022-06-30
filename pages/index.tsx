@@ -822,6 +822,7 @@ const Home: NextPage = () => {
                 />
                 <div className=" md:mx-auto m:w-8/12">
                   <SocialButton
+                    bgColor="hover:bg-[#C9437A] bg-twitter"
                     text="Follow us on twitter"
                     link="https://twitter.com/oddsquadnft"
                     icon={
@@ -933,7 +934,7 @@ const Home: NextPage = () => {
                   </Newake>
                   <div className="w-6/12 mx-auto ">
                     <SocialButton
-                      bgColor="bg-[#7C50FB]"
+                      bgColor="bg-[#7C50FB] hover:bg-[#C9437A]"
                       text="JOIN OUR DISCORD"
                       link="https://discord.com/invite/EnkXWmqc"
                       icon={
